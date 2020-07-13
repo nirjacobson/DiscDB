@@ -28,7 +28,7 @@ import org.bson.conversions.Bson;
 
 public abstract class BaseTDao<T> {
 
-  private static final String MONGO_URI = "mongodb+srv://%s:%s@%s/test?retryWrites=true&w=majority";
+  private static final String MONGO_URI = "%s://%s:%s@%s/%s?retryWrites=true&w=majority";
 
   private static final MongoClient _mongoClient = getMongoClient();
 
@@ -39,16 +39,18 @@ public abstract class BaseTDao<T> {
   private final Class<T> _encoderClass;
 
   private static MongoClient getMongoClient() {
+    final String mongoProtocol = System.getenv("DISCDB_MONGO_SRV") == null ? "mongodb" : "mongodb+srv";
     final String mongoUser = System.getenv("DISCDB_MONGO_USER");
     final String mongoPassword = System.getenv("DISCDB_MONGO_PASSWORD");
     final String mongoHost = System.getenv("DISCDB_MONGO_HOST");
+    final String mongoAuthDb = Optional.ofNullable(System.getenv("DISCDB_MONGO_AUTH_DB")).orElse("");
 
     if (mongoUser == null || mongoPassword == null || mongoHost == null) {
       throw new IllegalStateException(
-          "The mongoDB user credential environment variables are not set.");
+          "The mongoDB connection environment variables are not set.");
     }
 
-    return MongoClients.create(String.format(MONGO_URI, mongoUser, mongoPassword, mongoHost));
+    return MongoClients.create(String.format(MONGO_URI, mongoProtocol, mongoUser, mongoPassword, mongoHost, mongoAuthDb));
   }
 
   protected BaseTDao(final String pDbName, final String pCollectionName) {
