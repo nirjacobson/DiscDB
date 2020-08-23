@@ -1,11 +1,13 @@
 package com.nirjacobson.discdb.res.common;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import lombok.Getter;
 
 @Getter
-public class ApiError {
+public class ApiErrorView {
 
   @JsonProperty(FieldDefs.ERROR)
   private final int _error;
@@ -19,20 +21,20 @@ public class ApiError {
   @JsonProperty(FieldDefs.ERROR_CODE)
   private final ApiErrorCode _errorCode;
 
-  @JsonProperty(FieldDefs.PARAMETERS)
-  private final List<Object> _parameters;
-
-  public ApiError(
-      final int pError,
-      final String pReason,
-      final String pDetail,
-      final ApiErrorCode pErrorCode,
-      final List<Object> pParameters) {
-    _error = pError;
-    _reason = pReason;
-    _detail = pDetail;
+  public ApiErrorView(final ApiErrorCode pErrorCode) {
+    _error = pErrorCode.getStatus();
+    _reason = pErrorCode.getReason();
+    _detail = pErrorCode.getMessage();
     _errorCode = pErrorCode;
-    _parameters = pParameters;
+  }
+
+  public ApiErrorView(
+      final ApiErrorCode pErrorCode,
+      final Object... pParameters) {
+    _error = pErrorCode.getStatus();
+    _reason = pErrorCode.getReason();
+    _detail = pErrorCode.formatMessage(pParameters);
+    _errorCode = pErrorCode;
   }
   
   public class FieldDefs {

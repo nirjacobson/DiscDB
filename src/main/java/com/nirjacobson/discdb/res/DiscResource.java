@@ -1,7 +1,8 @@
 package com.nirjacobson.discdb.res;
 
 import com.nirjacobson.discdb.model.Disc;
-import com.nirjacobson.discdb.res.common.ApiErrorCode;
+import com.nirjacobson.discdb.res.common.ApiException;
+import com.nirjacobson.discdb.res.common.DiscApiErrorCode;
 import com.nirjacobson.discdb.svc.DiscSvc;
 import com.nirjacobson.discdb.svc.common.DiscErrorCode;
 import com.nirjacobson.discdb.svc.common.SvcException;
@@ -20,7 +21,7 @@ import org.bson.types.ObjectId;
 
 @Singleton
 @Path("/api/v1.0")
-public class DiscDBResource {
+public class DiscResource {
   @Inject private DiscSvc _discSvc;
 
   private Response create(final Disc pDisc) throws Exception {
@@ -28,7 +29,10 @@ public class DiscDBResource {
       return Response.ok(new DiscView(_discSvc.create(pDisc))).build();
     } catch (final SvcException pE) {
       if (pE.getErrorCode().equals(DiscErrorCode.INCORRECT_DISC_ID)) {
-        throw ApiErrorCode.INCORRECT_DISC_ID.exception(pDisc.getDiscId(), pDisc.calculateDiscId());
+        throw new ApiException(
+            DiscApiErrorCode.INCORRECT_DISC_ID, pDisc.getDiscId(), pDisc.calculateDiscId());
+      } else if (pE.getErrorCode().equals(DiscErrorCode.DUPLICATE_DISC)) {
+        throw new ApiException(DiscApiErrorCode.DUPLICATE_DISC, pDisc.getId());
       }
 
       throw pE;
@@ -44,7 +48,7 @@ public class DiscDBResource {
       return create(_discSvc.fromXMCD(pXMCD));
     } catch (final SvcException pE) {
       if (pE.getErrorCode().equals(DiscErrorCode.MALFORMED_XMCD)) {
-        throw ApiErrorCode.MALFORMED_XMCD.exception();
+        throw new ApiException(DiscApiErrorCode.MALFORMED_XMCD);
       }
 
       throw pE;
@@ -62,10 +66,12 @@ public class DiscDBResource {
   @Path("/query")
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
-  public Response query(final DiscView pDiscView) {
-    final DiscView discView = _discSvc.find(pDiscView.toBasicDisc())
-        .map(DiscView::new)
-        .orElseThrow(() -> ApiErrorCode.NO_MATCH.exception());
+  public Response find(final DiscView pDiscView) {
+    final DiscView discView =
+        _discSvc
+            .find(pDiscView.toBasicDisc())
+            .map(DiscView::new)
+            .orElseThrow(() -> new ApiException(DiscApiErrorCode.NO_MATCH));
 
     return Response.ok(discView).build();
   }
@@ -73,15 +79,13 @@ public class DiscDBResource {
   @GET
   @Path("/{id}")
   @Produces(MediaType.APPLICATION_JSON)
-  public Response getDisc(@PathParam("id") final ObjectId pId) {
-    try {
-      final DiscView discView = _discSvc.find(pId)
-          .map(DiscView::new)
-          .orElseThrow(() -> ApiErrorCode.DISC_NOT_FOUND.exception(pId));
+  public Response find(@PathParam("id") final ObjectId pId) {
+    final DiscView discView =
+        _discSvc
+            .find(pId)
+            .map(DiscView::new)
+            .orElseThrow(() -> new ApiException(DiscApiErrorCode.DISC_NOT_FOUND, pId));
 
-      return Response.ok(discView).build();
-    } catch (final IllegalArgumentException pE) {
-      throw ApiErrorCode.INVALID_DISC_ID.exception(pId);
-    }
+    return Response.ok(discView).build();
   }
 }
