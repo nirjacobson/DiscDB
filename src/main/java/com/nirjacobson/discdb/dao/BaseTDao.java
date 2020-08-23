@@ -156,6 +156,8 @@ public abstract class BaseTDao<T> {
         .updateOne(pQuery, pUpdate, pOptions);
   }
 
+  protected void dropCollection() { getCollection().drop(); }
+
   public static BasicDBObject flatten(final BasicDBObject pDBObject) {
     final BasicDBObject result = new BasicDBObject();
 
