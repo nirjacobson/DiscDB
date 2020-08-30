@@ -1,4 +1,4 @@
-package com.nirjacobson.discdb.res.common;
+package com.nirjacobson.discdb.res.exception;
 
 import javax.servlet.http.HttpServletResponse;
 import lombok.Getter;

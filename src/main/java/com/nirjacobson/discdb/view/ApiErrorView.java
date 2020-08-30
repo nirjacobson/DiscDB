@@ -1,6 +1,7 @@
-package com.nirjacobson.discdb.res.common;
+package com.nirjacobson.discdb.view;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.nirjacobson.discdb.res.exception.ApiErrorCode;
 import lombok.Getter;
 
 @Getter

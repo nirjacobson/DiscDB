@@ -1,5 +1,6 @@
-package com.nirjacobson.discdb.res.common;
+package com.nirjacobson.discdb.res.exception;
 
+import com.nirjacobson.discdb.view.ApiErrorView;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 

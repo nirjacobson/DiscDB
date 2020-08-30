@@ -1,4 +1,4 @@
-package com.nirjacobson.discdb.svc.common;
+package com.nirjacobson.discdb.svc.exception;
 
 public interface ErrorCode {
   String name();

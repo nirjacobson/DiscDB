@@ -8,13 +8,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c26b2bcb-0511-4032-ac11-c9fdf081f04b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/util/TestFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/dao/DiscDaoIntTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/dao/DiscDaoIntTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/res/DiscResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/res/DiscResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/res/common/ApiErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/res/exception/ApiErrorCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/res/common/ApiErrorView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/view/ApiErrorView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/res/common/ApiException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/res/exception/ApiException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/res/common/DiscApiErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/res/exception/DiscApiErrorCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/svc/DiscSvc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/svc/DiscSvc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/svc/common/DiscErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/svc/exception/DiscErrorCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/svc/common/ErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/svc/exception/ErrorCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/svc/common/SvcException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/svc/exception/SvcException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/res/DiscResourceIntTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/res/DiscResourceIntTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/svc/DiscSvcIntTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/svc/DiscSvcIntTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unit/java/com/nirjacobson/discdb/model/DiscUnitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unit/java/com/nirjacobson/discdb/model/DiscUnitTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unit/java/com/nirjacobson/discdb/util/XMCDParserUnitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unit/java/com/nirjacobson/discdb/util/XMCDParserUnitTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -47,7 +51,7 @@
           <entry key="class" value="47" />
           <entry key="config" value="3" />
           <entry key="iml" value="1" />
-          <entry key="java" value="201" />
+          <entry key="java" value="202" />
           <entry key="jsp" value="1" />
           <entry key="txt" value="1" />
           <entry key="xml" value="30" />
@@ -57,7 +61,7 @@
         <counts>
           <entry key="CLASS" value="47" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="201" />
+          <entry key="JAVA" value="202" />
           <entry key="JSP" value="1" />
           <entry key="Lombok config file" value="3" />
           <entry key="PLAIN_TEXT" value="1" />
@@ -95,14 +99,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/unit/java/com/nirjacobson/discdb/util/XMCDParserUnitTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="450">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/view/ApiErrorView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -111,11 +124,9 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/util/TestFactory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="322">
-              <caret line="73" column="25" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
+              <caret line="74" column="1" selection-start-line="74" selection-start-column="1" selection-end-line="74" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3681#3682#0" expanded="true" />
-                <element signature="e#3696#3697#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -236,6 +247,7 @@
         <option value="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/res/DiscResourceIntTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/util/TestFactory.java" />
         <option value="$PROJECT_DIR$/src/unit/java/com/nirjacobson/discdb/util/XMCDParserUnitTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/view/ApiErrorView.java" />
       </list>
     </option>
   </component>
@@ -321,15 +333,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="discdb" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DiscDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DiscDB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="discdb" type="462c0819:PsiDirectoryNode" />
               <item name="res" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -340,7 +343,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="discdb" type="462c0819:PsiDirectoryNode" />
               <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DiscDB" type="b2602c69:ProjectViewProjectNode" />
@@ -350,6 +353,16 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="discdb" type="462c0819:PsiDirectoryNode" />
               <item name="svc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DiscDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DiscDB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="discdb" type="462c0819:PsiDirectoryNode" />
+              <item name="svc" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DiscDB" type="b2602c69:ProjectViewProjectNode" />
@@ -796,24 +809,6 @@
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TomEE_Embedded__DiscSvcIntTests - 2020.08.29 at 22h 53m 40s.xml">
-      <configuration name="TomEE Embedded: DiscSvcIntTests" configurationId="ArquillianJUnit" />
-    </history-entry>
-    <history-entry file="DiscUnitTests - 2020.08.29 at 22h 53m 45s.xml">
-      <configuration name="DiscUnitTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="XMCDParserUnitTests - 2020.08.29 at 22h 53m 53s.xml">
-      <configuration name="XMCDParserUnitTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TomEE_Embedded__DiscDaoIntTests - 2020.08.30 at 11h 16m 47s.xml">
-      <configuration name="TomEE Embedded: DiscDaoIntTests" configurationId="ArquillianJUnit" />
-    </history-entry>
-    <history-entry file="TomEE_Embedded__DiscResourceIntTests - 2020.08.30 at 11h 16m 59s.xml">
-      <configuration name="TomEE Embedded: DiscResourceIntTests" configurationId="ArquillianJUnit" />
-    </history-entry>
-    <history-entry file="TomEE_Embedded__DiscResourceIntTests - 2020.08.30 at 11h 20m 44s.xml">
-      <configuration name="TomEE Embedded: DiscResourceIntTests" configurationId="ArquillianJUnit" />
-    </history-entry>
     <history-entry file="TomEE_Embedded__DiscDaoIntTests - 2020.08.30 at 11h 21m 01s.xml">
       <configuration name="TomEE Embedded: DiscDaoIntTests" configurationId="ArquillianJUnit" />
     </history-entry>
@@ -824,6 +819,24 @@
       <configuration name="DiscUnitTests" configurationId="JUnit" />
     </history-entry>
     <history-entry file="XMCDParserUnitTests - 2020.08.30 at 11h 21m 21s.xml">
+      <configuration name="XMCDParserUnitTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="XMCDParserUnitTests - 2020.08.30 at 11h 25m 55s.xml">
+      <configuration name="XMCDParserUnitTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TomEE_Embedded__DiscDaoIntTests - 2020.08.30 at 11h 26m 04s.xml">
+      <configuration name="TomEE Embedded: DiscDaoIntTests" configurationId="ArquillianJUnit" />
+    </history-entry>
+    <history-entry file="TomEE_Embedded__DiscResourceIntTests - 2020.08.30 at 11h 26m 13s.xml">
+      <configuration name="TomEE Embedded: DiscResourceIntTests" configurationId="ArquillianJUnit" />
+    </history-entry>
+    <history-entry file="TomEE_Embedded__DiscSvcIntTests - 2020.08.30 at 11h 26m 20s.xml">
+      <configuration name="TomEE Embedded: DiscSvcIntTests" configurationId="ArquillianJUnit" />
+    </history-entry>
+    <history-entry file="DiscUnitTests - 2020.08.30 at 11h 26m 23s.xml">
+      <configuration name="DiscUnitTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="XMCDParserUnitTests - 2020.08.30 at 11h 26m 28s.xml">
       <configuration name="XMCDParserUnitTests" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -838,16 +851,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4967742" visible="true" weight="0.15687053" />
-      <window_info id="Structure" order="1" sideWeight="0.5032258" side_tool="true" visible="true" weight="0.15687053" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49673912" visible="true" weight="0.15687053" />
+      <window_info id="Structure" order="1" sideWeight="0.50326085" side_tool="true" visible="true" weight="0.15687053" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3277372" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49960285" visible="true" weight="0.43430656" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960285" weight="0.43430656" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39854014" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -856,7 +868,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="IvyIDEA" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32846716" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32846716" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50039715" side_tool="true" weight="0.32932693" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.3270073" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" sideWeight="0.49960285" weight="0.32932693" />
@@ -885,7 +897,7 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/svc/common/SvcException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/svc/exception/SvcException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="27" column="90" selection-start-line="27" selection-start-column="90" selection-end-line="27" selection-end-column="90" />
@@ -931,7 +943,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/res/common/DiscApiErrorCode.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/res/exception/DiscApiErrorCode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
@@ -1012,6 +1024,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+          <folding>
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1050,21 +1066,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/res/common/ApiException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/res/exception/ApiException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/res/common/ApiErrorView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/res/common/ApiErrorCode.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/res/exception/ApiErrorCode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="10" column="30" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="30" />
@@ -1258,22 +1267,27 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/util/TestFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
-          <caret line="73" column="25" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
+          <caret line="74" column="1" selection-start-line="74" selection-start-column="1" selection-end-line="74" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3681#3682#0" expanded="true" />
-            <element signature="e#3696#3697#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/unit/java/com/nirjacobson/discdb/util/XMCDParserUnitTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="450">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/view/ApiErrorView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>

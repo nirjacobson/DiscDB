@@ -9,8 +9,8 @@ import static org.junit.Assert.fail;
 
 import com.nirjacobson.discdb.dao.DiscDao;
 import com.nirjacobson.discdb.model.Disc;
-import com.nirjacobson.discdb.svc.common.DiscErrorCode;
-import com.nirjacobson.discdb.svc.common.SvcException;
+import com.nirjacobson.discdb.svc.exception.DiscErrorCode;
+import com.nirjacobson.discdb.svc.exception.SvcException;
 import com.nirjacobson.discdb.util.TestFactory;
 import java.util.Arrays;
 import java.util.Optional;

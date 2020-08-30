@@ -1,11 +1,11 @@
 package com.nirjacobson.discdb.res;
 
 import com.nirjacobson.discdb.model.Disc;
-import com.nirjacobson.discdb.res.common.ApiException;
-import com.nirjacobson.discdb.res.common.DiscApiErrorCode;
+import com.nirjacobson.discdb.res.exception.ApiException;
+import com.nirjacobson.discdb.res.exception.DiscApiErrorCode;
 import com.nirjacobson.discdb.svc.DiscSvc;
-import com.nirjacobson.discdb.svc.common.DiscErrorCode;
-import com.nirjacobson.discdb.svc.common.SvcException;
+import com.nirjacobson.discdb.svc.exception.DiscErrorCode;
+import com.nirjacobson.discdb.svc.exception.SvcException;
 import com.nirjacobson.discdb.view.DiscView;
 import javax.inject.Inject;
 import javax.inject.Singleton;

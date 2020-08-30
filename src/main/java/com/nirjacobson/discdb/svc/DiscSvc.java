@@ -2,8 +2,8 @@ package com.nirjacobson.discdb.svc;
 
 import com.nirjacobson.discdb.dao.DiscDao;
 import com.nirjacobson.discdb.model.Disc;
-import com.nirjacobson.discdb.svc.common.DiscErrorCode;
-import com.nirjacobson.discdb.svc.common.SvcException;
+import com.nirjacobson.discdb.svc.exception.DiscErrorCode;
+import com.nirjacobson.discdb.svc.exception.SvcException;
 import com.nirjacobson.discdb.util.XMCDParser;
 import java.util.Optional;
 import javax.inject.Inject;

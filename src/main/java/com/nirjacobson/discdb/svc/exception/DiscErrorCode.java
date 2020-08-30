@@ -1,4 +1,4 @@
-package com.nirjacobson.discdb.svc.common;
+package com.nirjacobson.discdb.svc.exception;
 
 public enum DiscErrorCode implements ErrorCode {
   MALFORMED_XMCD("XMCD is malformed."),

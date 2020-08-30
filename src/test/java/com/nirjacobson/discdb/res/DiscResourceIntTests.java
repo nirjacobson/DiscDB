@@ -4,11 +4,11 @@ import static org.junit.Assert.assertEquals;
 
 import com.nirjacobson.discdb.dao.DiscDao;
 import com.nirjacobson.discdb.model.Disc;
-import com.nirjacobson.discdb.res.common.ApiErrorCode;
-import com.nirjacobson.discdb.res.common.ApiErrorView;
-import com.nirjacobson.discdb.res.common.DiscApiErrorCode;
+import com.nirjacobson.discdb.res.exception.ApiErrorCode;
+import com.nirjacobson.discdb.view.ApiErrorView;
+import com.nirjacobson.discdb.res.exception.DiscApiErrorCode;
 import com.nirjacobson.discdb.svc.DiscSvc;
-import com.nirjacobson.discdb.svc.common.SvcException;
+import com.nirjacobson.discdb.svc.exception.SvcException;
 import com.nirjacobson.discdb.util.TestFactory;
 import com.nirjacobson.discdb.view.DiscView;
 import java.util.stream.IntStream;

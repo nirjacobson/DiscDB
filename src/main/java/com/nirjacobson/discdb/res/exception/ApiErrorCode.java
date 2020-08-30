@@ -1,6 +1,6 @@
-package com.nirjacobson.discdb.res.common;
+package com.nirjacobson.discdb.res.exception;
 
-import com.nirjacobson.discdb.svc.common.ErrorCode;
+import com.nirjacobson.discdb.svc.exception.ErrorCode;
 import javax.servlet.http.HttpServletResponse;
 
 public interface ApiErrorCode extends ErrorCode {
