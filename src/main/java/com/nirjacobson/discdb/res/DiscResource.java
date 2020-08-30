@@ -27,7 +27,7 @@ public class DiscResource {
 
   private Response create(final Disc pDisc) throws Exception {
     try {
-      return Response.status(HttpServletResponse.SC_OK)
+      return Response.status(HttpServletResponse.SC_CREATED)
           .entity(new DiscView(_discSvc.create(pDisc)))
           .build();
     } catch (final SvcException pE) {
