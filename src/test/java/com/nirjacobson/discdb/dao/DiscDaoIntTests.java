@@ -6,9 +6,9 @@ import static org.junit.Assert.assertTrue;
 
 import com.nirjacobson.discdb.model.Disc;
 import com.nirjacobson.discdb.svc.MongoSvc;
-import java.util.Collections;
+import com.nirjacobson.discdb.util.TestFactory;
+import java.util.stream.Collectors;
 import javax.inject.Inject;
-import org.bson.types.ObjectId;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
@@ -37,13 +37,7 @@ public class DiscDaoIntTests {
 
   @Test
   public void testCreateAndFind() {
-    final Disc disc =
-        new Disc.Builder()
-            .id(ObjectId.get())
-            .discId(4)
-            .length(110)
-            .tracks(Collections.emptyList())
-            .build();
+    final Disc disc = TestFactory.getDisc();
 
     // Create
     assertEquals(0, _discDao.findAll().size());
@@ -57,10 +51,28 @@ public class DiscDaoIntTests {
 
     // Find(Disc)
     final Disc findMatch =
-        new Disc.Builder().discId(4).length(110).tracks(Collections.emptyList()).build();
+        new Disc.Builder()
+            .discId(disc.getDiscId())
+            .length(disc.getLength())
+            .tracks(
+                disc.getTracks().stream()
+                    .map(
+                        track ->
+                            new Disc.Track.Builder().frameOffset(track.getFrameOffset()).build())
+                    .collect(Collectors.toList()))
+            .build();
 
     final Disc findNonmatch =
-        new Disc.Builder().discId(5).length(110).tracks(Collections.emptyList()).build();
+        new Disc.Builder()
+            .discId(disc.getDiscId() + 1)
+            .length(disc.getLength())
+            .tracks(
+                disc.getTracks().stream()
+                    .map(
+                        track ->
+                            new Disc.Track.Builder().frameOffset(track.getFrameOffset()).build())
+                    .collect(Collectors.toList()))
+            .build();
 
     assertTrue(_discDao.find(findMatch).isPresent());
     assertFalse(_discDao.find(findNonmatch).isPresent());
