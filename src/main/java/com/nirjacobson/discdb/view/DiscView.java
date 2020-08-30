@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.nirjacobson.discdb.model.Disc;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -52,9 +51,7 @@ public class DiscView {
     _year = pDisc.getYear();
     _genre = pDisc.getGenre();
     _length = pDisc.getLength();
-    _tracks = pDisc.getTracks().stream()
-        .map(TrackView::new)
-        .collect(Collectors.toList());
+    _tracks = pDisc.getTracks().stream().map(TrackView::new).collect(Collectors.toList());
     _extendedData = pDisc.getExtendedData();
     _playOrder = pDisc.getPlayOrder();
   }
@@ -88,7 +85,6 @@ public class DiscView {
 
     @JsonProperty(FieldDefs.TITLE)
     private String _title;
-
 
     @JsonProperty(FieldDefs.EXTENDED_DATA)
     private String _extendedData;

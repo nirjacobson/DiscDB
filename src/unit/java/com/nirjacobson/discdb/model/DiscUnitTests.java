@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.nirjacobson.discdb.util.BasicDBListCollector;
-import com.sun.tools.javac.util.List;
+import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import org.bson.types.ObjectId;
@@ -94,7 +94,7 @@ public class DiscUnitTests {
         .append(Disc.FieldDefs.LENGTH, 2891)
         .append(
             Disc.FieldDefs.TRACKS,
-            List.of(
+            Arrays.asList(
                     new BasicDBObject()
                         .append(Disc.Track.FieldDefs.FRAME_OFFSET, 150)
                         .append(Disc.Track.FieldDefs.TITLE, "Curves Ahead")
@@ -136,6 +136,7 @@ public class DiscUnitTests {
         .append(Disc.FieldDefs.EXTENDED_DATA, "YEAR: 1991")
         .append(
             Disc.FieldDefs.PLAY_ORDER,
-            List.of(1, 3, 2, 4, 5, 7, 6, 8, 9).stream().collect(new BasicDBListCollector<>()));
+            Arrays.asList(1, 3, 2, 4, 5, 7, 6, 8, 9).stream()
+                .collect(new BasicDBListCollector<>()));
   }
 }

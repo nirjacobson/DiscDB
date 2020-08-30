@@ -1,6 +1,5 @@
 package com.nirjacobson.discdb.util;
 
-
 import com.fasterxml.jackson.annotation.JsonView;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
@@ -13,12 +12,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.type.TypeFactory;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
-import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
-import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -27,7 +23,6 @@ import java.io.Writer;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
 import java.util.Optional;
-import javax.annotation.Priority;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 import javax.ws.rs.WebApplicationException;
@@ -51,13 +46,13 @@ public class CustomJacksonJsonProvider
 
   private static final Logger LOG = LoggerFactory.getLogger(CustomJacksonJsonProvider.class);
 
-  @Context
-  private UriInfo _uriInfo;
+  @Context private UriInfo _uriInfo;
 
   private static ObjectMapper _mapper = createObjectMapper();
 
   @Override
-  public boolean isReadable(Class<?> pType, Type pGenericType, Annotation[] pAnnotations, MediaType pMediaType) {
+  public boolean isReadable(
+      Class<?> pType, Type pGenericType, Annotation[] pAnnotations, MediaType pMediaType) {
     if (pType == char[].class
         || pType == byte[].class
         || pType == String.class
@@ -71,7 +66,14 @@ public class CustomJacksonJsonProvider
   }
 
   @Override
-  public Object readFrom(Class<Object> aClass, Type pType, Annotation[] pAnnotations, MediaType pMediaType, MultivaluedMap<String, String> pMultivaluedMap, InputStream pInputStream) throws IOException, WebApplicationException {
+  public Object readFrom(
+      Class<Object> aClass,
+      Type pType,
+      Annotation[] pAnnotations,
+      MediaType pMediaType,
+      MultivaluedMap<String, String> pMultivaluedMap,
+      InputStream pInputStream)
+      throws IOException, WebApplicationException {
     try {
       return _mapper
           .readerFor(TypeFactory.defaultInstance().constructType(pType))
@@ -153,7 +155,6 @@ public class CustomJacksonJsonProvider
         .enable(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS)
         .registerModule(createSerializationModule())
         .registerModule(new Jdk8Module());
-
   }
 
   private static SimpleModule createSerializationModule() {

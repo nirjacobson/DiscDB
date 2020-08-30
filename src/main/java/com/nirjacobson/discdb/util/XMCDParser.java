@@ -71,8 +71,7 @@ public class XMCDParser {
           switch (key) {
             case Keys.DISCID:
               final Matcher matcher = Patterns.DISCID.matcher(value.trim());
-              while (matcher.find())
-                discIds.add(Long.parseLong(matcher.group(0), 16));
+              while (matcher.find()) discIds.add(Long.parseLong(matcher.group(0), 16));
               break;
             case Keys.DTITLE:
               String newValue = value;
@@ -141,9 +140,7 @@ public class XMCDParser {
 
                   if (i < trackExtendedData.size())
                     Optional.ofNullable(trackExtendedData.get(i))
-                        .map(
-                            extendedData ->
-                                unescape(extendedData))
+                        .map(extendedData -> unescape(extendedData))
                         .ifPresent(extendedData -> trackBuilder.extendedData(extendedData.trim()));
 
                   return trackBuilder.build();
@@ -152,20 +149,16 @@ public class XMCDParser {
 
     discBuilder.tracks(tracks);
 
-    if (!discExtendedData.isEmpty())
-      discBuilder.extendedData(unescape(discExtendedData).trim());
+    if (!discExtendedData.isEmpty()) discBuilder.extendedData(unescape(discExtendedData).trim());
 
     if (!playOrder.isEmpty()) discBuilder.playOrder(playOrder);
 
     final Disc disc = discBuilder.discId(0).build();
     final long discID = disc.calculateDiscId();
 
-    if (!discIds.contains(discID))
-      throw new ParseException();
+    if (!discIds.contains(discID)) throw new ParseException();
 
-    return new Disc.Builder(disc.toDBObject())
-        .discId(discID)
-        .build();
+    return new Disc.Builder(disc.toDBObject()).discId(discID).build();
   }
 
   private static void appendAtIndex(List<String> pList, final int pIndex, final String pValue) {
@@ -183,9 +176,7 @@ public class XMCDParser {
       int cp = input.codePointAt(i);
 
       if (cp == '\\') {
-        int cp1 = (i < input.length() - 1)
-          ? input.codePointAt(++i)
-          : 'n';
+        int cp1 = (i < input.length() - 1) ? input.codePointAt(++i) : 'n';
 
         switch (cp1) {
           case 'n':

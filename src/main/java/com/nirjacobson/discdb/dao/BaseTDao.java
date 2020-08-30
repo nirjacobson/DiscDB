@@ -8,17 +8,18 @@ import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.WriteConcern;
 import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.UpdateOptions;
 import com.mongodb.client.result.UpdateResult;
+import com.nirjacobson.discdb.svc.MongoSvc;
 import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
+import javax.inject.Inject;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.ClassModel;
 import org.bson.codecs.pojo.Convention;
@@ -28,30 +29,13 @@ import org.bson.conversions.Bson;
 
 public abstract class BaseTDao<T> {
 
-  private static final String MONGO_URI = "%s://%s:%s@%s/%s?retryWrites=true&w=majority";
-
-  private static final MongoClient _mongoClient = getMongoClient();
+  @Inject private MongoSvc _mongoSvc;
 
   private final CodecRegistry CODEC_REGISTRY = initializeCodecRegistry();
 
   private final String _dbName;
   private final String _collectionName;
   private final Class<T> _encoderClass;
-
-  private static MongoClient getMongoClient() {
-    final String mongoProtocol = System.getenv("DISCDB_MONGO_SRV") == null ? "mongodb" : "mongodb+srv";
-    final String mongoUser = System.getenv("DISCDB_MONGO_USER");
-    final String mongoPassword = System.getenv("DISCDB_MONGO_PASSWORD");
-    final String mongoHost = System.getenv("DISCDB_MONGO_HOST");
-    final String mongoAuthDb = Optional.ofNullable(System.getenv("DISCDB_MONGO_AUTH_DB")).orElse("");
-
-    if (mongoUser == null || mongoPassword == null || mongoHost == null) {
-      throw new IllegalStateException(
-          "The mongoDB connection environment variables are not set.");
-    }
-
-    return MongoClients.create(String.format(MONGO_URI, mongoProtocol, mongoUser, mongoPassword, mongoHost, mongoAuthDb));
-  }
 
   protected BaseTDao(final String pDbName, final String pCollectionName) {
     _dbName = pDbName;
@@ -77,10 +61,6 @@ public abstract class BaseTDao<T> {
 
   public String getNamespace() {
     return _dbName + "." + _collectionName;
-  }
-
-  public MongoClient getMongo() {
-    return _mongoClient;
   }
 
   public CodecRegistry getCodecRegistry() {
@@ -115,7 +95,7 @@ public abstract class BaseTDao<T> {
   }
 
   public MongoCollection<T> getCollection() {
-    return getDatabase(getMongo(), _dbName)
+    return getDatabase(_mongoSvc.getMongo(), _dbName)
         .getCollection(_collectionName, getEncoderClass())
         .withCodecRegistry(CODEC_REGISTRY);
   }
@@ -144,7 +124,6 @@ public abstract class BaseTDao<T> {
     return getCollection().withWriteConcern(WriteConcern.MAJORITY).replaceOne(pQuery, pDoc);
   }
 
-
   public UpdateResult updateOneMajority(final Bson pQuery, final Bson pUpdate) {
     return updateOneMajority(pQuery, pUpdate, new UpdateOptions());
   }
@@ -156,7 +135,9 @@ public abstract class BaseTDao<T> {
         .updateOne(pQuery, pUpdate, pOptions);
   }
 
-  protected void dropCollection() { getCollection().drop(); }
+  public void dropCollection() {
+    getCollection().drop();
+  }
 
   public static BasicDBObject flatten(final BasicDBObject pDBObject) {
     final BasicDBObject result = new BasicDBObject();

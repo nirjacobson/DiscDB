@@ -7,6 +7,7 @@ import com.nirjacobson.discdb.util.BasicDBListCollector;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import org.bson.BsonReader;
 import org.bson.BsonWriter;
@@ -17,6 +18,7 @@ import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.types.ObjectId;
 
 @Getter
+@EqualsAndHashCode
 public class Disc {
   public static final String DB_NAME = "discdb";
   public static final String COLLECTION_NAME = "discs";
@@ -80,7 +82,11 @@ public class Disc {
     Optional.ofNullable(_extendedData)
         .ifPresent(extendedData -> dbObject.append(FieldDefs.EXTENDED_DATA, extendedData));
     Optional.ofNullable(_playOrder)
-        .ifPresent(playOrder -> dbObject.append(FieldDefs.PLAY_ORDER, playOrder));
+        .ifPresent(
+            playOrder ->
+                dbObject.append(
+                    FieldDefs.PLAY_ORDER,
+                    playOrder.stream().collect(new BasicDBListCollector<>())));
 
     return dbObject;
   }
@@ -101,14 +107,14 @@ public class Disc {
 
     long discID =
         ((result % 0xff) << 24)
-            | ((_length - framesToSeconds(_tracks.get(0).getFrameOffset()))
-            << 8)
+            | ((_length - framesToSeconds(_tracks.get(0).getFrameOffset())) << 8)
             | _tracks.size();
 
     return discID;
   }
 
   @Getter
+  @EqualsAndHashCode
   public static class Track {
     private final int _frameOffset;
     private final String _title;
@@ -237,7 +243,8 @@ public class Disc {
     }
 
     public Builder playOrder(final List<Integer> pPlayOrder) {
-      _dbObject.append(FieldDefs.PLAY_ORDER, pPlayOrder);
+      _dbObject.append(
+          FieldDefs.PLAY_ORDER, pPlayOrder.stream().collect(new BasicDBListCollector<>()));
       return this;
     }
 

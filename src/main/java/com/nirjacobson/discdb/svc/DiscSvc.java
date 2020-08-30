@@ -28,10 +28,7 @@ public class DiscSvc {
     }
 
     if (pDisc.getId() == null) {
-      final Disc disc =
-          new Disc.Builder(pDisc.toDBObject())
-              .id(ObjectId.get())
-              .build();
+      final Disc disc = new Disc.Builder(pDisc.toDBObject()).id(ObjectId.get()).build();
       _discDao.create(disc);
 
       return disc;

@@ -9,6 +9,7 @@ import com.nirjacobson.discdb.svc.common.SvcException;
 import com.nirjacobson.discdb.view.DiscView;
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -26,7 +27,9 @@ public class DiscResource {
 
   private Response create(final Disc pDisc) throws Exception {
     try {
-      return Response.ok(new DiscView(_discSvc.create(pDisc))).build();
+      return Response.status(HttpServletResponse.SC_OK)
+          .entity(new DiscView(_discSvc.create(pDisc)))
+          .build();
     } catch (final SvcException pE) {
       if (pE.getErrorCode().equals(DiscErrorCode.INCORRECT_DISC_ID)) {
         throw new ApiException(
@@ -73,7 +76,7 @@ public class DiscResource {
             .map(DiscView::new)
             .orElseThrow(() -> new ApiException(DiscApiErrorCode.NO_MATCH));
 
-    return Response.ok(discView).build();
+    return Response.status(HttpServletResponse.SC_OK).entity(discView).build();
   }
 
   @GET
@@ -86,6 +89,6 @@ public class DiscResource {
             .map(DiscView::new)
             .orElseThrow(() -> new ApiException(DiscApiErrorCode.DISC_NOT_FOUND, pId));
 
-    return Response.ok(discView).build();
+    return Response.status(HttpServletResponse.SC_OK).entity(discView).build();
   }
 }

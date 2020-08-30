@@ -14,15 +14,11 @@ public class ApiException extends WebApplicationException {
   }
 
   private static Response response(final ApiErrorCode pErrorCode) {
-    return Response
-        .status(pErrorCode.getStatus())
-        .entity(new ApiErrorView(pErrorCode))
-        .build();
+    return Response.status(pErrorCode.getStatus()).entity(new ApiErrorView(pErrorCode)).build();
   }
 
   private static Response response(final ApiErrorCode pErrorCode, final Object... pParameters) {
-    return Response
-        .status(pErrorCode.getStatus())
+    return Response.status(pErrorCode.getStatus())
         .entity(new ApiErrorView(pErrorCode, pParameters))
         .build();
   }

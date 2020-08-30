@@ -20,8 +20,7 @@ public class DiscDao extends BaseTDao<Disc> {
     final CodecRegistry codecRegistry = super.initializeCodecRegistry();
 
     return CodecRegistries.fromRegistries(
-        CodecRegistries.fromCodecs(new Disc.DiscCodec(codecRegistry)),
-        codecRegistry);
+        CodecRegistries.fromCodecs(new Disc.DiscCodec(codecRegistry)), codecRegistry);
   }
 
   public void create(final Disc pDisc) {
@@ -34,8 +33,6 @@ public class DiscDao extends BaseTDao<Disc> {
   }
 
   public Optional<Disc> find(final Disc pDisc) {
-    return Optional.ofNullable(
-        getCollection().find(flatten(pDisc.toDBObject())).first());
+    return Optional.ofNullable(getCollection().find(flatten(pDisc.toDBObject())).first());
   }
-
 }

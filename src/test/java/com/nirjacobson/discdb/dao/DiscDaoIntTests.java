@@ -5,6 +5,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import com.nirjacobson.discdb.model.Disc;
+import com.nirjacobson.discdb.svc.MongoSvc;
 import java.util.Collections;
 import javax.inject.Inject;
 import org.bson.types.ObjectId;
@@ -22,6 +23,7 @@ public class DiscDaoIntTests {
   @Deployment
   public static JavaArchive createDeployment() {
     return ShrinkWrap.create(JavaArchive.class)
+        .addClass(MongoSvc.class)
         .addClass(DiscDao.class)
         .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
   }
@@ -31,8 +33,7 @@ public class DiscDaoIntTests {
     _discDao.dropCollection();
   }
 
-  @Inject
-  private DiscDao _discDao;
+  @Inject private DiscDao _discDao;
 
   @Test
   public void testCreateAndFind() {
@@ -55,20 +56,13 @@ public class DiscDaoIntTests {
     assertTrue(_discDao.find(disc.getId()).isPresent());
 
     // Find(Disc)
-    final Disc findMatch = new Disc.Builder()
-        .discId(4)
-        .length(110)
-        .tracks(Collections.emptyList())
-        .build();
+    final Disc findMatch =
+        new Disc.Builder().discId(4).length(110).tracks(Collections.emptyList()).build();
 
-    final Disc findNonmatch = new Disc.Builder()
-        .discId(5)
-        .length(110)
-        .tracks(Collections.emptyList())
-        .build();
+    final Disc findNonmatch =
+        new Disc.Builder().discId(5).length(110).tracks(Collections.emptyList()).build();
 
     assertTrue(_discDao.find(findMatch).isPresent());
     assertFalse(_discDao.find(findNonmatch).isPresent());
   }
-
 }
