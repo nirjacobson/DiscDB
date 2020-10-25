@@ -2,3 +2,5 @@ out
 target
 **/XMCDImporter.java
 client/node_modules
+server/web/index.html
+server/web/build.js

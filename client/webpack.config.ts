@@ -24,6 +24,10 @@ const webpackConfig = (env): Configuration => ({
                     transpileOnly: true
                 },
                 exclude: /dist/
+            },
+            {
+                test: /\.less$/,
+                use: [{loader: "style-loader"}, {loader: "css-loader"}, {loader: "less-loader"}]
             }
         ]
     },

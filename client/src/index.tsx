@@ -3,4 +3,6 @@ import ReactDOM from "react-dom";
 
 import App from "./App";
 
+import "../public/index.less";
+
 ReactDOM.render(<App />, document.getElementById("root"));

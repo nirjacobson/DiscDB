@@ -1,6 +1,6 @@
 import React from "react";
-import HelloWorld from "components/HelloWorld";
+import DiscDB from "components/DiscDB";
 
-const App = (): JSX.Element => <HelloWorld />;
+const App = (): JSX.Element => <DiscDB />;
 
 export default App;
