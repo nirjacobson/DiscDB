@@ -7,6 +7,10 @@ import com.nirjacobson.discdb.svc.DiscSvc;
 import com.nirjacobson.discdb.svc.exception.DiscErrorCode;
 import com.nirjacobson.discdb.svc.exception.SvcException;
 import com.nirjacobson.discdb.view.DiscView;
+import com.nirjacobson.discdb.view.FindResultsView;
+import java.util.List;
+import java.util.stream.Collectors;
+import javafx.util.Pair;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +20,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import org.bson.types.ObjectId;
@@ -65,8 +70,21 @@ public class DiscResource {
     return create(pDiscView.toDisc());
   }
 
+  @GET
+  @Path("/{id}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response find(@PathParam("id") final ObjectId pId) {
+    final DiscView discView =
+        _discSvc
+            .find(pId)
+            .map(DiscView::new)
+            .orElseThrow(() -> new ApiException(DiscApiErrorCode.DISC_NOT_FOUND, pId));
+
+    return Response.status(HttpServletResponse.SC_OK).entity(discView).build();
+  }
+
   @POST
-  @Path("/query")
+  @Path("/find")
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
   public Response find(final DiscView pDiscView) {
@@ -80,15 +98,22 @@ public class DiscResource {
   }
 
   @GET
-  @Path("/{id}")
+  @Path("/find")
   @Produces(MediaType.APPLICATION_JSON)
-  public Response find(@PathParam("id") final ObjectId pId) {
-    final DiscView discView =
-        _discSvc
-            .find(pId)
-            .map(DiscView::new)
-            .orElseThrow(() -> new ApiException(DiscApiErrorCode.DISC_NOT_FOUND, pId));
+  public Response find(
+      @QueryParam("artist") final String pArtist,
+      @QueryParam("title") final String pTitle,
+      @QueryParam("genre") final String pGenre,
+      @QueryParam("year") final Integer pYear,
+      @QueryParam("page") final Integer pPage) {
 
-    return Response.status(HttpServletResponse.SC_OK).entity(discView).build();
+    final Pair<List<Disc>, Integer> results = _discSvc.find(pArtist, pTitle, pGenre, pYear, pPage);
+
+    final FindResultsView resultsView =
+        new FindResultsView(
+            results.getKey().stream().map(DiscView::new).collect(Collectors.toList()),
+            results.getValue());
+
+    return Response.status(HttpServletResponse.SC_OK).entity(resultsView).build();
   }
 }

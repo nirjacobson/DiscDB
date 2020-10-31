@@ -7,8 +7,12 @@ import static org.junit.Assert.assertTrue;
 import com.nirjacobson.discdb.model.Disc;
 import com.nirjacobson.discdb.svc.MongoSvc;
 import com.nirjacobson.discdb.util.TestFactory;
+import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import javafx.util.Pair;
 import javax.inject.Inject;
+import org.bson.types.ObjectId;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
@@ -76,5 +80,31 @@ public class DiscDaoIntTests {
 
     assertTrue(_discDao.find(findMatch).isPresent());
     assertFalse(_discDao.find(findNonmatch).isPresent());
+  }
+
+  @Test
+  public void testFindMany() {
+    {
+      final Pair<List<Disc>, Integer> results =
+          _discDao.find("rippingtons", "curves", null, null, 1);
+      assertEquals(0, results.getKey().size());
+      assertEquals(0, results.getValue().intValue());
+    }
+
+    IntStream.range(0, DiscDao.PAGE_SIZE + 1)
+        .mapToObj(i -> new Disc.Builder(TestFactory.getDisc().toDBObject()).id(ObjectId.get()).build())
+        .forEach(disc -> _discDao.create(disc));
+
+    {
+      final Pair<List<Disc>, Integer> resultsPage1 =
+          _discDao.find("rippingtons", "curves", null, null, 1);
+      assertEquals(DiscDao.PAGE_SIZE, resultsPage1.getKey().size());
+      assertEquals(2, resultsPage1.getValue().intValue());
+
+      final Pair<List<Disc>, Integer> resultsPage2 =
+          _discDao.find("rippingtons", "curves", null, null, 2);
+      assertEquals(1, resultsPage2.getKey().size());
+      assertEquals(2, resultsPage2.getValue().intValue());
+    }
   }
 }

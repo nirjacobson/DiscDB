@@ -5,18 +5,21 @@ import static org.junit.Assert.assertEquals;
 import com.nirjacobson.discdb.dao.DiscDao;
 import com.nirjacobson.discdb.model.Disc;
 import com.nirjacobson.discdb.res.exception.ApiErrorCode;
-import com.nirjacobson.discdb.view.ApiErrorView;
 import com.nirjacobson.discdb.res.exception.DiscApiErrorCode;
 import com.nirjacobson.discdb.svc.DiscSvc;
 import com.nirjacobson.discdb.svc.exception.SvcException;
 import com.nirjacobson.discdb.util.TestFactory;
+import com.nirjacobson.discdb.view.ApiErrorView;
 import com.nirjacobson.discdb.view.DiscView;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.stream.IntStream;
 import javax.inject.Inject;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import org.bson.types.ObjectId;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.RunAsClient;
 import org.jboss.arquillian.extension.rest.client.ArquillianResteasyResource;
@@ -113,7 +116,7 @@ public class DiscResourceIntTests {
       verifyApiError(DiscApiErrorCode.DISC_NOT_FOUND, response);
     }
 
-    _discSvc.create(disc);
+    _discDao.create(disc);
 
     {
       final JSONObject response =
@@ -131,17 +134,77 @@ public class DiscResourceIntTests {
     final JSONObject discQueryJson = TestFactory.getBasicDiscJson();
 
     {
-      final JSONObject response = doJsonPost(pWebTarget, "/api/v1.0/query", discQueryJson);
+      final JSONObject response = doJsonPost(pWebTarget, "/api/v1.0/find", discQueryJson);
 
       verifyApiError(DiscApiErrorCode.NO_MATCH, response);
     }
 
-    _discSvc.create(disc);
+    _discDao.create(disc);
 
     {
-      final JSONObject response = doJsonPost(pWebTarget, "/api/v1.0/query", discQueryJson);
+      final JSONObject response = doJsonPost(pWebTarget, "/api/v1.0/find", discQueryJson);
 
       verifyDiscJson(disc, response, true);
+    }
+  }
+
+  @Test
+  @RunAsClient
+  public void testFindMany(@ArquillianResteasyResource("") final WebTarget pWebTarget)
+      throws SvcException {
+    // Before creation
+    {
+      final JSONObject response =
+          doJsonGet(
+              pWebTarget,
+              "/api/v1.0/find",
+              new HashMap<String, Object>() {
+                {
+                  put("artist", "rippingtons");
+                  put("title", "curves");
+                }
+              });
+
+      assertEquals(0, response.getJSONArray("results").length());
+      assertEquals(0, response.getInt("pages"));
+    }
+
+    IntStream.range(0, DiscDao.PAGE_SIZE + 3)
+        .mapToObj(i -> new Disc.Builder(TestFactory.getDisc().toDBObject()).id(ObjectId.get()).build())
+        .forEach(disc -> _discDao.create(disc));
+
+    // After creation
+    {
+      final JSONObject response =
+          doJsonGet(
+              pWebTarget,
+              "/api/v1.0/find",
+              new HashMap<String, Object>() {
+                {
+                  put("artist", "rippingtons");
+                  put("title", "curves");
+                }
+              });
+
+      assertEquals(DiscDao.PAGE_SIZE, response.getJSONArray("results").length());
+      assertEquals(2, response.getInt("pages"));
+    }
+
+    {
+      final JSONObject response =
+          doJsonGet(
+              pWebTarget,
+              "/api/v1.0/find",
+              new HashMap<String, Object>() {
+                {
+                  put("artist", "rippingtons");
+                  put("title", "curves");
+                  put("page", 2);
+                }
+              });
+
+      assertEquals(3, response.getJSONArray("results").length());
+      assertEquals(2, response.getInt("pages"));
     }
   }
 
@@ -188,6 +251,18 @@ public class DiscResourceIntTests {
 
   private JSONObject doJsonGet(final WebTarget pWebTarget, final String pPath) {
     final Response response = pWebTarget.path(pPath).request(MediaType.APPLICATION_JSON).get();
+
+    return new JSONObject(response.readEntity(String.class));
+  }
+
+  private JSONObject doJsonGet(final WebTarget pWebTarget, final String pPath, final Map<String, Object> queryParams) {
+    WebTarget webTarget = pWebTarget.path(pPath);
+
+    for (final Map.Entry<String, Object> entry : queryParams.entrySet()) {
+      webTarget = webTarget.queryParam(entry.getKey(), entry.getValue());
+    }
+
+    final Response response = webTarget.request(MediaType.APPLICATION_JSON).get();
 
     return new JSONObject(response.readEntity(String.class));
   }
