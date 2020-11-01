@@ -78,11 +78,11 @@ Track {
                 following algorithm:
                 <pre>
                     {`
-int64 calculateDiscId() {
+uint32 calculateDiscId() {
   if (tracks.length == 0) return 0;
 
-  int64 result = 0;
-  int64 temp;
+  uint32 result = 0;
+  uint32 temp;
 
   for (Track track : tracks) {
     temp = framesToSeconds(track.frameOffset);
@@ -92,7 +92,7 @@ int64 calculateDiscId() {
     } while (temp != 0);
   }
 
-  int64 discID =
+  uint32 discID =
       ((result % 0xff) << 24)
           | ((length - framesToSeconds(tracks[0].frameOffset)) << 8)
           | tracks.length;
