@@ -7,15 +7,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c26b2bcb-0511-4032-ac11-c9fdf081f04b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/dao/DiscDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/dao/DiscDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/res/DiscResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/res/DiscResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/dao/DiscDaoIntTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/dao/DiscDaoIntTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/res/DiscResourceIntTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/res/DiscResourceIntTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/svc/DiscSvcIntTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/svc/DiscSvcIntTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="c26b2bcb-0511-4032-ac11-c9fdf081f04b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,7 +75,7 @@
     <session id="-1747208744">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.2" value="1" />
@@ -932,7 +924,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48960498" visible="true" weight="0.16163622" />
       <window_info id="Structure" order="1" sideWeight="0.510395" side_tool="true" visible="true" weight="0.16163622" />

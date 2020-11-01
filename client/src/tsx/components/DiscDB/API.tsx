@@ -38,7 +38,7 @@ Track {
         </pre>
         <Endpoint>
             <Title>GET /api/v1.0/{"{id}"}</Title>
-            <Description>Retrieve a disc by DiscDB ID.</Description>
+            <Description>Get a disc by its DiscDB ID.</Description>
         </Endpoint>
         <Endpoint>
             <Title>
@@ -51,7 +51,7 @@ Track {
                 <pre>
                     {`
 Results {
-  results: Array<Disc>;         // This page of up to 10 results
+  results: Array<Disc>;         // The requested page of up to 10 results
   pages: number;                // The number of pages of results
 }`}
                 </pre>
@@ -105,8 +105,8 @@ int64 calculateDiscId() {
         <Endpoint>
             <Title>POST /api/v1.0</Title>
             <Description>
-                Add a Disc to the database. The POST body is a Disc whose DiscDB ID can be omitted.
-                The response is the Disc created.
+                Add a Disc to the database. The POST body is a Disc whose DiscDB ID is omitted. The
+                response is the Disc created.
             </Description>
         </Endpoint>
         <Endpoint>
