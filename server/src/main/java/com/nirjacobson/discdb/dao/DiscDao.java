@@ -81,8 +81,7 @@ public class DiscDao extends BaseTDao<Disc> {
 
     final Bson query = fields.isEmpty() ? new BasicDBObject() : and(fields);
 
-    final int pages =
-        (int) Math.ceil((double) getCollection().countDocuments(query) / PAGE_SIZE);
+    final int pages = (int) Math.ceil((double) getCollection().countDocuments(query) / PAGE_SIZE);
 
     return new Pair(
         getCollection()
@@ -90,7 +89,9 @@ public class DiscDao extends BaseTDao<Disc> {
             .sort(
                 new BasicDBObject()
                     .append(Disc.FieldDefs.ARTIST, 1)
-                    .append(Disc.FieldDefs.TITLE, 1))
+                    .append(Disc.FieldDefs.TITLE, 1)
+                    .append(Disc.FieldDefs.GENRE, 1)
+                    .append(Disc.FieldDefs.YEAR, 1))
             .skip(((pPage == null ? 1 : pPage) - 1) * PAGE_SIZE)
             .limit(PAGE_SIZE)
             .into(new ArrayList<>()),

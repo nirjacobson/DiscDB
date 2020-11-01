@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 
 import App from "./App";
 
-import "../public/index.less";
+import "bootstrap/dist/css/bootstrap.css";
+import "../../public/index.less";
 
 ReactDOM.render(<App />, document.getElementById("root"));

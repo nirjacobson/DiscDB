@@ -4,16 +4,15 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
 const webpackConfig = (env): Configuration => ({
-    entry: "./src/index.tsx",
+    entry: "./src/tsx/index.tsx",
     resolve: {
         extensions: [".ts", ".tsx", ".js"],
-        alias: {
-            components: path.resolve(__dirname, "./src/components/")
-        }
+        modules: [".", "node_modules"]
     },
     output: {
         path: path.join(__dirname, "/dist"),
-        filename: "build.js"
+        filename: "build.js",
+        publicPath: "/"
     },
     module: {
         rules: [
@@ -26,10 +25,17 @@ const webpackConfig = (env): Configuration => ({
                 exclude: /dist/
             },
             {
+                test: /\.css/,
+                use: [{loader: "style-loader"}, {loader: "css-loader"}]
+            },
+            {
                 test: /\.less$/,
                 use: [{loader: "style-loader"}, {loader: "css-loader"}, {loader: "less-loader"}]
             }
         ]
+    },
+    devServer: {
+        historyApiFallback: true
     },
     plugins: [
         new HtmlWebpackPlugin({

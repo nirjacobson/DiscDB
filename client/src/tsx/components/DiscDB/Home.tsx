@@ -5,8 +5,7 @@ const Page = styled.div``;
 
 const Home = (): JSX.Element => (
     <Page>
-        DiscDB is a free database of audio disc metadata based on freedb.org, with a RESTful
-        interface.
+        DiscDB is a free database of audio disc metadata with a RESTful API, based on freedb.org.
     </Page>
 );
 

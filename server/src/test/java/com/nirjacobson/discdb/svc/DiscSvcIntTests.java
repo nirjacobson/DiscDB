@@ -132,7 +132,8 @@ public class DiscSvcIntTests {
     }
 
     IntStream.range(0, DiscDao.PAGE_SIZE + 3)
-        .mapToObj(i -> new Disc.Builder(TestFactory.getDisc().toDBObject()).id(ObjectId.get()).build())
+        .mapToObj(
+            i -> new Disc.Builder(TestFactory.getDisc().toDBObject()).id(ObjectId.get()).build())
         .forEach(disc -> _discDao.create(disc));
 
     {

@@ -170,7 +170,8 @@ public class DiscResourceIntTests {
     }
 
     IntStream.range(0, DiscDao.PAGE_SIZE + 3)
-        .mapToObj(i -> new Disc.Builder(TestFactory.getDisc().toDBObject()).id(ObjectId.get()).build())
+        .mapToObj(
+            i -> new Disc.Builder(TestFactory.getDisc().toDBObject()).id(ObjectId.get()).build())
         .forEach(disc -> _discDao.create(disc));
 
     // After creation
@@ -219,7 +220,7 @@ public class DiscResourceIntTests {
       assertEquals(pDisc.getId().toString(), pJson.getString(DiscView.FieldDefs.ID));
     }
 
-    assertEquals(pDisc.getDiscId(), pJson.getLong(DiscView.FieldDefs.DISC_ID));
+    assertEquals(pDisc.getDiscId(), Long.parseLong(pJson.getString(DiscView.FieldDefs.DISC_ID), 16));
     assertEquals(pDisc.getArtist(), pJson.getString(DiscView.FieldDefs.ARTIST));
     assertEquals(pDisc.getTitle(), pJson.getString(DiscView.FieldDefs.TITLE));
     assertEquals(pDisc.getYear(), pJson.get(DiscView.FieldDefs.YEAR));
@@ -255,7 +256,8 @@ public class DiscResourceIntTests {
     return new JSONObject(response.readEntity(String.class));
   }
 
-  private JSONObject doJsonGet(final WebTarget pWebTarget, final String pPath, final Map<String, Object> queryParams) {
+  private JSONObject doJsonGet(
+      final WebTarget pWebTarget, final String pPath, final Map<String, Object> queryParams) {
     WebTarget webTarget = pWebTarget.path(pPath);
 
     for (final Map.Entry<String, Object> entry : queryParams.entrySet()) {

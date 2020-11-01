@@ -188,7 +188,7 @@ public class TestFactory {
 
   public static JSONObject getBasicDiscJson() {
     return new JSONObject()
-        .put(DiscView.FieldDefs.DISC_ID, 2131446025)
+        .put(DiscView.FieldDefs.DISC_ID, Long.toHexString(2131446025))
         .put(DiscView.FieldDefs.LENGTH, 2891)
         .put(
             DiscView.FieldDefs.TRACKS,
@@ -208,7 +208,7 @@ public class TestFactory {
   public static JSONObject getDiscJson() {
     return new JSONObject()
         .put(DiscView.FieldDefs.ID, ID.toString())
-        .put(DiscView.FieldDefs.DISC_ID, 2131446025)
+        .put(DiscView.FieldDefs.DISC_ID, Long.toHexString(2131446025))
         .put(DiscView.FieldDefs.ARTIST, "The Rippingtons")
         .put(DiscView.FieldDefs.TITLE, "Curves Ahead")
         .put(DiscView.FieldDefs.YEAR, 1991)

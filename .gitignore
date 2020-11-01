@@ -1,6 +1,7 @@
-out
-target
-**/XMCDImporter.java
-client/node_modules
+server/out
+server/target
 server/web/index.html
 server/web/build.js
+**/XMCDImporter.java
+client/dist
+client/node_modules

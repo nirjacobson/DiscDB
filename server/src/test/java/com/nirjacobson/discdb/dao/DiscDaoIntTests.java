@@ -92,7 +92,8 @@ public class DiscDaoIntTests {
     }
 
     IntStream.range(0, DiscDao.PAGE_SIZE + 1)
-        .mapToObj(i -> new Disc.Builder(TestFactory.getDisc().toDBObject()).id(ObjectId.get()).build())
+        .mapToObj(
+            i -> new Disc.Builder(TestFactory.getDisc().toDBObject()).id(ObjectId.get()).build())
         .forEach(disc -> _discDao.create(disc));
 
     {

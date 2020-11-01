@@ -17,7 +17,7 @@ public class DiscView {
   private ObjectId _id;
 
   @JsonProperty(FieldDefs.DISC_ID)
-  private long _discId;
+  private String _discId;
 
   @JsonProperty(FieldDefs.ARTIST)
   private String _artist;
@@ -45,7 +45,7 @@ public class DiscView {
 
   public DiscView(final Disc pDisc) {
     _id = pDisc.getId();
-    _discId = pDisc.getDiscId();
+    _discId = Long.toHexString(pDisc.getDiscId());
     _artist = pDisc.getArtist();
     _title = pDisc.getTitle();
     _year = pDisc.getYear();
@@ -58,7 +58,7 @@ public class DiscView {
 
   public Disc toBasicDisc() {
     return new Disc.Builder()
-        .discId(_discId)
+        .discId(Long.parseLong(_discId, 16))
         .length(_length)
         .tracks(_tracks.stream().map(TrackView::toTrack).collect(Collectors.toList()))
         .build();
