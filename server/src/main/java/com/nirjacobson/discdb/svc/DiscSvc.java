@@ -5,9 +5,8 @@ import com.nirjacobson.discdb.model.Disc;
 import com.nirjacobson.discdb.svc.exception.DiscErrorCode;
 import com.nirjacobson.discdb.svc.exception.SvcException;
 import com.nirjacobson.discdb.util.XMCDParser;
-import java.util.List;
+import com.nirjacobson.discdb.view.FindResultsView;
 import java.util.Optional;
-import javafx.util.Pair;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import org.bson.types.ObjectId;
@@ -51,7 +50,7 @@ public class DiscSvc {
     return _discDao.find(pDisc);
   }
 
-  public Pair<List<Disc>, Integer> find(
+  public FindResultsView find(
       final String pArtist,
       final String pTitle,
       final String pGenre,

@@ -8,9 +8,6 @@ import com.nirjacobson.discdb.svc.exception.DiscErrorCode;
 import com.nirjacobson.discdb.svc.exception.SvcException;
 import com.nirjacobson.discdb.view.DiscView;
 import com.nirjacobson.discdb.view.FindResultsView;
-import java.util.List;
-import java.util.stream.Collectors;
-import javafx.util.Pair;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.servlet.http.HttpServletResponse;
@@ -107,12 +104,7 @@ public class DiscResource {
       @QueryParam("year") final Integer pYear,
       @QueryParam("page") final Integer pPage) {
 
-    final Pair<List<Disc>, Integer> results = _discSvc.find(pArtist, pTitle, pGenre, pYear, pPage);
-
-    final FindResultsView resultsView =
-        new FindResultsView(
-            results.getKey().stream().map(DiscView::new).collect(Collectors.toList()),
-            results.getValue());
+    final FindResultsView resultsView = _discSvc.find(pArtist, pTitle, pGenre, pYear, pPage);
 
     return Response.status(HttpServletResponse.SC_OK).entity(resultsView).build();
   }

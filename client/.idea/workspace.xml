@@ -2,23 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a50d0458-6466-4de7-91cb-7b37e117d517" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/components/DiscDB/Search/Pages.spec.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/components/DiscDB/Search/Pages.spec.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/components/DiscDB/Search/SearchResult/Tracks.spec.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/components/DiscDB/Search/SearchResult/Tracks.spec.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/components/DiscDB/Search/SearchResult/index.spec.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/components/DiscDB/Search/SearchResult/index.spec.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/components/DiscDB/Search/index.spec.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/components/DiscDB/Search/index.spec.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/components/DiscDB/index.spec.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/components/DiscDB/index.spec.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/setup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/setup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/utils/timeUtils.spec.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/utils/timeUtils.spec.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tsx/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/tsx/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tsx/components/DiscDB/Search/Pages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/tsx/components/DiscDB/Search/Pages.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tsx/components/DiscDB/Search/SearchResult/Tracks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/tsx/components/DiscDB/Search/SearchResult/Tracks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tsx/components/DiscDB/Search/SearchResult/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/tsx/components/DiscDB/Search/SearchResult/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tsx/components/DiscDB/Search/SearchTerms.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/tsx/components/DiscDB/Search/SearchTerms.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tsx/components/DiscDB/Search/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/tsx/components/DiscDB/Search/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tsx/components/DiscDB/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/tsx/components/DiscDB/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/com/nirjacobson/discdb/dao/DiscDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/com/nirjacobson/discdb/dao/DiscDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/com/nirjacobson/discdb/res/DiscResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/com/nirjacobson/discdb/res/DiscResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/com/nirjacobson/discdb/svc/DiscSvc.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/com/nirjacobson/discdb/svc/DiscSvc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/test/java/com/nirjacobson/discdb/dao/DiscDaoIntTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/test/java/com/nirjacobson/discdb/dao/DiscDaoIntTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/test/java/com/nirjacobson/discdb/res/DiscResourceIntTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/test/java/com/nirjacobson/discdb/res/DiscResourceIntTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/test/java/com/nirjacobson/discdb/svc/DiscSvcIntTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/test/java/com/nirjacobson/discdb/svc/DiscSvcIntTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/web/WEB-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/web/WEB-INF/beans.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -483,7 +475,7 @@
     <frame x="0" y="0" width="2560" height="1440" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26171565" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26171565" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -500,7 +492,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="10" weight="0.32932693" />
       <window_info anchor="bottom" id="IvyIDEA" order="11" weight="0.32932693" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49960285" visible="true" weight="0.32919708" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49960285" visible="true" weight="0.32919708" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50039715" side_tool="true" weight="0.32932693" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />

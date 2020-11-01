@@ -12,11 +12,10 @@ import com.nirjacobson.discdb.model.Disc;
 import com.nirjacobson.discdb.svc.exception.DiscErrorCode;
 import com.nirjacobson.discdb.svc.exception.SvcException;
 import com.nirjacobson.discdb.util.TestFactory;
+import com.nirjacobson.discdb.view.FindResultsView;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
-import javafx.util.Pair;
 import javax.inject.Inject;
 import org.bson.types.ObjectId;
 import org.jboss.arquillian.container.test.api.Deployment;
@@ -125,10 +124,9 @@ public class DiscSvcIntTests {
   @Test
   public void testFindMany() {
     {
-      final Pair<List<Disc>, Integer> results =
-          _discSvc.find("rippingtons", "curves", null, null, 1);
-      assertEquals(0, results.getKey().size());
-      assertEquals(0, results.getValue().intValue());
+      final FindResultsView results = _discSvc.find("rippingtons", "curves", null, null, 1);
+      assertEquals(0, results.getResults().size());
+      assertEquals(0, results.getPages());
     }
 
     IntStream.range(0, DiscDao.PAGE_SIZE + 3)
@@ -137,15 +135,13 @@ public class DiscSvcIntTests {
         .forEach(disc -> _discDao.create(disc));
 
     {
-      final Pair<List<Disc>, Integer> resultsPage1 =
-          _discSvc.find("rippingtons", "curves", null, null, 1);
-      assertEquals(DiscDao.PAGE_SIZE, resultsPage1.getKey().size());
-      assertEquals(2, resultsPage1.getValue().intValue());
+      final FindResultsView resultsPage1 = _discSvc.find("rippingtons", "curves", null, null, 1);
+      assertEquals(DiscDao.PAGE_SIZE, resultsPage1.getResults().size());
+      assertEquals(2, resultsPage1.getPages());
 
-      final Pair<List<Disc>, Integer> resultsPage2 =
-          _discSvc.find("rippingtons", "curves", null, null, 2);
-      assertEquals(3, resultsPage2.getKey().size());
-      assertEquals(2, resultsPage2.getValue().intValue());
+      final FindResultsView resultsPage2 = _discSvc.find("rippingtons", "curves", null, null, 2);
+      assertEquals(3, resultsPage2.getResults().size());
+      assertEquals(2, resultsPage2.getPages());
     }
   }
 

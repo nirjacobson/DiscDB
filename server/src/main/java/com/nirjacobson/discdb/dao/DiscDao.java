@@ -5,11 +5,13 @@ import static com.mongodb.client.model.Filters.regex;
 
 import com.mongodb.BasicDBObject;
 import com.nirjacobson.discdb.model.Disc;
+import com.nirjacobson.discdb.view.DiscView;
+import com.nirjacobson.discdb.view.FindResultsView;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
-import javafx.util.Pair;
+import java.util.stream.Collectors;
 import javax.inject.Singleton;
 import org.bson.codecs.configuration.CodecRegistries;
 import org.bson.codecs.configuration.CodecRegistry;
@@ -46,7 +48,7 @@ public class DiscDao extends BaseTDao<Disc> {
     return Optional.ofNullable(getCollection().find(flatten(pDisc.toDBObject())).first());
   }
 
-  public Pair<List<Disc>, Integer> find(
+  public FindResultsView find(
       final String pArtist,
       final String pTitle,
       final String pGenre,
@@ -83,18 +85,18 @@ public class DiscDao extends BaseTDao<Disc> {
 
     final int pages = (int) Math.ceil((double) getCollection().countDocuments(query) / PAGE_SIZE);
 
-    return new Pair(
-        getCollection()
-            .find(query)
+    return new FindResultsView(
+        getCollection().find(query)
             .sort(
                 new BasicDBObject()
                     .append(Disc.FieldDefs.ARTIST, 1)
                     .append(Disc.FieldDefs.TITLE, 1)
                     .append(Disc.FieldDefs.GENRE, 1)
                     .append(Disc.FieldDefs.YEAR, 1))
-            .skip(((pPage == null ? 1 : pPage) - 1) * PAGE_SIZE)
-            .limit(PAGE_SIZE)
-            .into(new ArrayList<>()),
+            .skip(((pPage == null ? 1 : pPage) - 1) * PAGE_SIZE).limit(PAGE_SIZE)
+            .into(new ArrayList<>()).stream()
+            .map(DiscView::new)
+            .collect(Collectors.toList()),
         pages);
   }
 }

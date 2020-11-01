@@ -220,7 +220,8 @@ public class DiscResourceIntTests {
       assertEquals(pDisc.getId().toString(), pJson.getString(DiscView.FieldDefs.ID));
     }
 
-    assertEquals(pDisc.getDiscId(), Long.parseLong(pJson.getString(DiscView.FieldDefs.DISC_ID), 16));
+    assertEquals(
+        pDisc.getDiscId(), Long.parseLong(pJson.getString(DiscView.FieldDefs.DISC_ID), 16));
     assertEquals(pDisc.getArtist(), pJson.getString(DiscView.FieldDefs.ARTIST));
     assertEquals(pDisc.getTitle(), pJson.getString(DiscView.FieldDefs.TITLE));
     assertEquals(pDisc.getYear(), pJson.get(DiscView.FieldDefs.YEAR));
