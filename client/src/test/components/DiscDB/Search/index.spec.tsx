@@ -2,27 +2,23 @@ require("src/test/setup.tsx");
 
 // 3rd party
 import React from "react";
-
 // test deps
 import {mount} from "enzyme";
 import chai, {expect} from "chai";
 import sinon from "sinon";
 import sinonChai from "sinon-chai";
-
-chai.use(sinonChai);
-
 // components
 import Search from "src/tsx/components/DiscDB/Search";
 import SearchTerms from "src/tsx/components/DiscDB/Search/SearchTerms";
 import Pages from "src/tsx/components/DiscDB/Search/Pages";
 import SearchResult from "src/tsx/components/DiscDB/Search/SearchResult";
 import {Button} from "react-bootstrap";
-
 // api
 import api from "src/tsx/api";
-
 // fixtures
 import fixtures from "src/test/fixtures";
+
+chai.use(sinonChai);
 
 describe("src/tsx/components/DiscDB/Search", function () {
     describe("when rendered", function () {

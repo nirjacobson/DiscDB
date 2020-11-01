@@ -7,48 +7,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c26b2bcb-0511-4032-ac11-c9fdf081f04b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../client/src/test/components/DiscDB/Search/Pages.spec.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/test/components/DiscDB/Search/SearchResult/Tracks.spec.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/test/components/DiscDB/Search/SearchResult/index.spec.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/test/components/DiscDB/Search/SearchTerms.spec.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/test/components/DiscDB/Search/index.spec.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/test/components/DiscDB/index.spec.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/test/fixtures.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/test/setup.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/test/utils/timeUtils.spec.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/tsx/App.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/tsx/Disc.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/tsx/api/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/API.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/Contact.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/Search/Pages.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/Search/SearchResult/Tracks.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/Search/SearchResult/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/Search/SearchTerms.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/Search/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/tsx/utils/timeUtils.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/.prettierrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/.prettierrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/dist/build.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/DiscDB/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/Home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/tsx/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/webpack.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/webpack.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/test/components/DiscDB/Search/Pages.spec.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/test/components/DiscDB/Search/Pages.spec.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/test/components/DiscDB/Search/SearchResult/Tracks.spec.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/test/components/DiscDB/Search/SearchResult/Tracks.spec.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/test/components/DiscDB/Search/SearchResult/index.spec.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/test/components/DiscDB/Search/SearchResult/index.spec.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/test/components/DiscDB/Search/index.spec.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/test/components/DiscDB/Search/index.spec.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/test/components/DiscDB/index.spec.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/test/components/DiscDB/index.spec.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/test/setup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/test/setup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/test/utils/timeUtils.spec.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/test/utils/timeUtils.spec.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/tsx/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/tsx/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/Search/Pages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/Search/Pages.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/Search/SearchResult/Tracks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/Search/SearchResult/Tracks.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/Search/SearchResult/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/Search/SearchResult/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/Search/SearchTerms.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/Search/SearchTerms.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/Search/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/Search/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/tsx/components/DiscDB/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/dao/DiscDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/dao/DiscDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/view/DiscView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nirjacobson/discdb/view/DiscView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/dao/DiscDaoIntTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/dao/DiscDaoIntTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/res/DiscResourceIntTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/res/DiscResourceIntTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/svc/DiscSvcIntTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/svc/DiscSvcIntTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/util/TestFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nirjacobson/discdb/util/TestFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -971,14 +946,14 @@
     <frame x="0" y="0" width="2560" height="1440" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48953974" visible="true" weight="0.16163622" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48953974" visible="true" weight="0.16163622" />
       <window_info id="Structure" order="1" sideWeight="0.51046026" side_tool="true" visible="true" weight="0.16163622" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32692307" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49960285" visible="true" weight="0.47664234" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960285" visible="true" weight="0.47664234" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39781022" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

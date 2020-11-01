@@ -2,18 +2,16 @@ require("src/test/setup.tsx");
 
 // 3rd party
 import React from "react";
-
 // test deps
 import {mount} from "enzyme";
 import {expect} from "chai";
-
 // components
 import DiscDB from "src/tsx/components/DiscDB";
 import Home from "src/tsx/components/DiscDB/Home";
 import API from "src/tsx/components/DiscDB/API";
 import Search from "src/tsx/components/DiscDB/Search/index";
 import Contact from "src/tsx/components/DiscDB/Contact";
-import {MemoryRouter, Switch, Route, Link} from "react-router-dom";
+import {Link, MemoryRouter, Route, Switch} from "react-router-dom";
 
 describe("src/tsx/components/DiscDB", function () {
     describe("when rendered", function () {

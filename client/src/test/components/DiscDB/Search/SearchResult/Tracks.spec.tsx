@@ -2,14 +2,11 @@ require("src/test/setup.tsx");
 
 // 3rd party
 import React from "react";
-
 // test deps
 import {mount} from "enzyme";
 import {expect} from "chai";
-
 // components
 import Tracks from "src/tsx/components/DiscDB/Search/SearchResult/Tracks";
-
 // fixtures
 import fixtures from "src/test/fixtures";
 

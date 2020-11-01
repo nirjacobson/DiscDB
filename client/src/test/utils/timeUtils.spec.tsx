@@ -2,7 +2,6 @@ require("src/test/setup.tsx");
 
 // test deps
 import {expect} from "chai";
-
 // subject
 import {secondsToTimeString} from "src/tsx/utils/timeUtils";
 
