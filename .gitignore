@@ -4,3 +4,4 @@ server/web/index.html
 server/web/build.js
 client/dist
 client/node_modules
+client/package-lock.json
