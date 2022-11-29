@@ -2,7 +2,7 @@
 
 import React, {useState} from "react";
 import styled from "@emotion/styled";
-import {css, jsx} from "@emotion/core";
+import {css, jsx} from "@emotion/react";
 
 import {Accordion, Button, Card, Table} from "react-bootstrap";
 

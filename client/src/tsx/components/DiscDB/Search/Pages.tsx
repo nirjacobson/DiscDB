@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import React from "react";
-import {jsx, css} from "@emotion/core";
+import {jsx, css} from "@emotion/react";
 
 import {Button, ButtonGroup, ButtonToolbar} from "react-bootstrap";
 

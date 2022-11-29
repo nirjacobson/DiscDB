@@ -2,10 +2,14 @@ import path from "path";
 import webpack, {Configuration} from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
+import * as Path from "path";
 
 const webpackConfig = (env): Configuration => ({
     entry: "./src/tsx/index.tsx",
     resolve: {
+        alias: {
+            react: Path.resolve(__dirname, 'node_modules/react')
+        },
         extensions: [".ts", ".tsx", ".js"],
         modules: [".", "node_modules"]
     },
