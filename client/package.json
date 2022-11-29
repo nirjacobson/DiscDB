@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --mode development --open --hot --progress",
-    "build": "webpack --mode production --env.production --progress",
+    "build": "webpack --mode production --progress",
     "lint": "eslint './src/**/*.{ts,tsx}'",
     "lint:fix": "eslint './src/**/*.{ts,tsx}' --fix",
     "test": "mocha --require ts-node/register --require tsconfig-paths/register"
