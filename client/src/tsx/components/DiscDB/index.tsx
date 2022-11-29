@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import {Link, Route, Switch} from "react-router-dom";
+import {Link, Route, Routes} from "react-router-dom";
 
 import Home from "./Home";
 import API from "./API";
@@ -47,20 +47,12 @@ const DiscDB = (): JSX.Element => (
                 <Link to="/search">Search</Link> | <Link to="/contact">Contact</Link>
             </Links>
 
-            <Switch>
-                <Route path="/api">
-                    <API />
-                </Route>
-                <Route path="/search">
-                    <Search />
-                </Route>
-                <Route path="/contact">
-                    <Contact />
-                </Route>
-                <Route path="/">
-                    <Home />
-                </Route>
-            </Switch>
+            <Routes>
+                <Route path="/api" element={<API />} />
+                <Route path="/search" element={<Search />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/" element={<Home />} />
+            </Routes>
         </Body>
     </>
 );

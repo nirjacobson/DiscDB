@@ -2,7 +2,7 @@
 
 import React, {useState} from "react";
 import styled from "@emotion/styled";
-import {jsx, css} from "@emotion/core";
+import {css, jsx} from "@emotion/core";
 
 import {Accordion, Button, Card, Table} from "react-bootstrap";
 
@@ -102,22 +102,18 @@ const SearchResult = ({result: disc}: Props): JSX.Element => {
     return (
         <Result>
             <Accordion>
-                <Card>
-                    <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="0" css={toggle}>
-                            <Title>{disc.title}</Title>
-                            <Artist>{disc.artist}</Artist>
-                        </Accordion.Toggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey="0">
-                        <Card.Body>
-                            <Button variant="link" onClick={() => setDisplayJson(!displayJson)}>
-                                View {displayJson ? "Table" : "JSON"}
-                            </Button>
-                            {displayJson ? json : table}
-                        </Card.Body>
-                    </Accordion.Collapse>
-                </Card>
+                <Accordion.Item eventKey="0">
+                    <Accordion.Header>
+                        <Title>{disc.title}</Title>
+                        <Artist>{disc.artist}</Artist>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                        <Button variant="link" onClick={() => setDisplayJson(!displayJson)}>
+                            View {displayJson ? "Table" : "JSON"}
+                        </Button>
+                        {displayJson ? json : table}
+                    </Accordion.Body>
+                </Accordion.Item>
             </Accordion>
         </Result>
     );
