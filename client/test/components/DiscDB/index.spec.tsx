@@ -1,4 +1,4 @@
-require("src/test/setup.tsx");
+require("client/test/setup.tsx");
 
 // 3rd party
 import React from "react";
@@ -6,11 +6,11 @@ import React from "react";
 import {mount} from "enzyme";
 import {expect} from "chai";
 // components
-import DiscDB from "src/tsx/components/DiscDB";
-import Home from "src/tsx/components/DiscDB/Home";
-import API from "src/tsx/components/DiscDB/API";
-import Search from "src/tsx/components/DiscDB/Search/index";
-import Contact from "src/tsx/components/DiscDB/Contact";
+import DiscDB from "client/src/tsx/components/DiscDB";
+import Home from "client/src/tsx/components/DiscDB/Home";
+import API from "client/src/tsx/components/DiscDB/API";
+import Search from "client/src/tsx/components/DiscDB/Search";
+import Contact from "client/src/tsx/components/DiscDB/Contact";
 import {Link, MemoryRouter, Route, Switch} from "react-router-dom";
 
 describe("src/tsx/components/DiscDB", function () {

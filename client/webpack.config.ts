@@ -34,9 +34,6 @@ const webpackConfig = (env): Configuration => ({
             }
         ]
     },
-    devServer: {
-        historyApiFallback: true
-    },
     plugins: [
         new HtmlWebpackPlugin({
             template: "./public/index.html"
@@ -47,9 +44,7 @@ const webpackConfig = (env): Configuration => ({
             "process.env.VERSION": JSON.stringify(require("./package.json").version)
         }),
         new ForkTsCheckerWebpackPlugin({
-            eslint: {
-                files: "./src/**/*.{ts,tsx,js,jsx}" // required - same as command `eslint ./src/**/*.{ts,tsx,js,jsx} --ext .ts,.tsx,.js,.jsx`
-            }
+
         })
     ]
 });

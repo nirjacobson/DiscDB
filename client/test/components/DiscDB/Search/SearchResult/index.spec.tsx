@@ -1,4 +1,4 @@
-require("src/test/setup.tsx");
+require("client/test/setup.tsx");
 
 // 3rd party
 import React from "react";
@@ -6,12 +6,12 @@ import React from "react";
 import {mount} from "enzyme";
 import {expect} from "chai";
 // components
-import SearchResult from "src/tsx/components/DiscDB/Search/SearchResult";
-import Tracks from "src/tsx/components/DiscDB/Search/SearchResult/Tracks";
+import SearchResult from "client/src/tsx/components/DiscDB/Search/SearchResult";
+import Tracks from "client/src/tsx/components/DiscDB/Search/SearchResult/Tracks";
 // utils
-import {secondsToTimeString} from "src/tsx/utils/timeUtils";
+import {secondsToTimeString} from "client/src/tsx/utils/timeUtils";
 // fixtures
-import fixtures from "src/test/fixtures";
+import fixtures from "client/test/fixtures";
 
 describe("src/tsx/components/DiscDB/Search/SearchResult", function () {
     describe("when rendered", function () {

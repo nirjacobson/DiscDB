@@ -1,4 +1,4 @@
-require("src/test/setup.tsx");
+require("client/test/setup.tsx");
 
 // 3rd party
 import React from "react";
@@ -8,15 +8,15 @@ import chai, {expect} from "chai";
 import sinon from "sinon";
 import sinonChai from "sinon-chai";
 // components
-import Search from "src/tsx/components/DiscDB/Search";
-import SearchTerms from "src/tsx/components/DiscDB/Search/SearchTerms";
-import Pages from "src/tsx/components/DiscDB/Search/Pages";
-import SearchResult from "src/tsx/components/DiscDB/Search/SearchResult";
+import Search from "client/src/tsx/components/DiscDB/Search";
+import SearchTerms from "client/src/tsx/components/DiscDB/Search/SearchTerms";
+import Pages from "client/src/tsx/components/DiscDB/Search/Pages";
+import SearchResult from "client/src/tsx/components/DiscDB/Search/SearchResult";
 import {Button} from "react-bootstrap";
 // api
-import api from "src/tsx/api";
+import api from "client/src/tsx/api";
 // fixtures
-import fixtures from "src/test/fixtures";
+import fixtures from "client/test/fixtures";
 
 chai.use(sinonChai);
 

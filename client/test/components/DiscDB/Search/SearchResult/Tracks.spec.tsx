@@ -1,4 +1,4 @@
-require("src/test/setup.tsx");
+require("client/test/setup.tsx");
 
 // 3rd party
 import React from "react";
@@ -6,9 +6,9 @@ import React from "react";
 import {mount} from "enzyme";
 import {expect} from "chai";
 // components
-import Tracks from "src/tsx/components/DiscDB/Search/SearchResult/Tracks";
+import Tracks from "client/src/tsx/components/DiscDB/Search/SearchResult/Tracks";
 // fixtures
-import fixtures from "src/test/fixtures";
+import fixtures from "client/test/fixtures";
 
 describe("src/tsx/components/DiscDB/Search/SearchResult/Tracks", function () {
     describe("when rendered", function () {

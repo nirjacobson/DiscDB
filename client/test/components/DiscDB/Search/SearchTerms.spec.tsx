@@ -1,4 +1,4 @@
-require("src/test/setup.tsx");
+require("client/test/setup.tsx");
 
 // 3rd party
 import React from "react";
@@ -12,7 +12,7 @@ import sinonChai from "sinon-chai";
 chai.use(sinonChai);
 
 // components
-import SearchTerms from "src/tsx/components/DiscDB/Search/SearchTerms";
+import SearchTerms from "client/src/tsx/components/DiscDB/Search/SearchTerms";
 import {Button, Form} from "react-bootstrap";
 
 describe("src/tsx/components/DiscDB/Search/SearchTerms", function () {

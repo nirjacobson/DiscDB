@@ -1,4 +1,4 @@
-require("src/test/setup.tsx");
+require("client/test/setup.tsx");
 
 // 3rd party
 import React from "react";
@@ -8,7 +8,7 @@ import chai, {expect} from "chai";
 import sinon from "sinon";
 import sinonChai from "sinon-chai";
 // components
-import Pages from "src/tsx/components/DiscDB/Search/Pages";
+import Pages from "client/src/tsx/components/DiscDB/Search/Pages";
 import {Button} from "react-bootstrap";
 
 chai.use(sinonChai);

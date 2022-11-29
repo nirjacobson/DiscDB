@@ -1,9 +1,9 @@
-require("src/test/setup.tsx");
+require("client/test/setup.tsx");
 
 // test deps
 import {expect} from "chai";
 // subject
-import {secondsToTimeString} from "src/tsx/utils/timeUtils";
+import {secondsToTimeString} from "client/src/tsx/utils/timeUtils";
 
 describe("src/tsx/utils/timeUtils", function () {
     describe("secondsToTimeString()", function () {
