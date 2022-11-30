@@ -1,4 +1,4 @@
-import Disc from "src/tsx/Disc";
+import Disc from 'src/tsx/Disc';
 
 const FRAMES_PER_SECOND = 75;
 
@@ -27,9 +27,9 @@ const secondsToTimeString = (seconds: number): string => {
     const s = seconds - h * 3600 - m * 60;
 
     if (h > 0) {
-        return `${h}:${m < 10 ? 0 : ""}${m}:${s < 10 ? 0 : ""}${s}`;
+        return `${h}:${m < 10 ? 0 : ''}${m}:${s < 10 ? 0 : ''}${s}`;
     } else if (m > 0) {
-        return `${m}:${s < 10 ? 0 : ""}${s}`;
+        return `${m}:${s < 10 ? 0 : ''}${s}`;
     } else {
         return `${s} s`;
     }

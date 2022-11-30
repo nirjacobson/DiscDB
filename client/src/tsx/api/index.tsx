@@ -1,4 +1,4 @@
-import Disc from "src/tsx/Disc";
+import Disc from 'src/tsx/Disc';
 
 interface FindTerms {
     artist?: string;
@@ -20,7 +20,7 @@ export default {
         })
             .filter((entry) => !!entry[1])
             .map((entry) => `${entry[0]}=${encodeURIComponent(entry[1] as string)}`)
-            .join("&");
+            .join('&');
 
         return fetch(`/api/v1.0/find?${params}`).then((response) => response.json());
     }

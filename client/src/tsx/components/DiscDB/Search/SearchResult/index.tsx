@@ -1,15 +1,15 @@
 /** @jsx jsx */
 
-import React, {useState} from "react";
-import styled from "@emotion/styled";
-import {css, jsx} from "@emotion/react";
+import React, {useState} from 'react';
+import styled from '@emotion/styled';
+import {css, jsx} from '@emotion/react';
 
-import {Accordion, Button, Card, Table} from "react-bootstrap";
+import {Accordion, Button, Card, Table} from 'react-bootstrap';
 
-import Disc from "src/tsx/Disc";
-import Tracks from "./Tracks";
+import Disc from 'src/tsx/Disc';
+import Tracks from './Tracks';
 
-import {secondsToTimeString} from "src/tsx/utils/timeUtils";
+import {secondsToTimeString} from 'src/tsx/utils/timeUtils';
 
 const Result = styled.div`
     padding-bottom: 16px;
@@ -102,14 +102,14 @@ const SearchResult = ({result: disc}: Props): JSX.Element => {
     return (
         <Result>
             <Accordion>
-                <Accordion.Item eventKey="0">
+                <Accordion.Item eventKey='0'>
                     <Accordion.Header>
                         <Title>{disc.title}</Title>
                         <Artist>{disc.artist}</Artist>
                     </Accordion.Header>
                     <Accordion.Body>
-                        <Button variant="link" onClick={() => setDisplayJson(!displayJson)}>
-                            View {displayJson ? "Table" : "JSON"}
+                        <Button variant='link' onClick={() => setDisplayJson(!displayJson)}>
+                            View {displayJson ? 'Table' : 'JSON'}
                         </Button>
                         {displayJson ? json : table}
                     </Accordion.Body>

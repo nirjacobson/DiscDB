@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "@emotion/styled";
+import React from 'react';
+import styled from '@emotion/styled';
 
-import {Link, Route, Routes} from "react-router-dom";
+import {Link, Route, Routes} from 'react-router-dom';
 
-import Home from "./Home";
-import API from "./API";
-import Search from "./Search/index";
-import Contact from "./Contact";
+import Home from './Home';
+import API from './API';
+import Search from './Search/index';
+import Contact from './Contact';
 
 const Header = styled.div`
     display: flex;
@@ -43,15 +43,15 @@ const DiscDB = (): JSX.Element => (
         </Header>
         <Body>
             <Links>
-                <Link to="/">Home</Link> | <Link to="/api">API</Link> |{" "}
-                <Link to="/search">Search</Link> | <Link to="/contact">Contact</Link>
+                <Link to='/'>Home</Link> | <Link to='/api'>API</Link> |{' '}
+                <Link to='/search'>Search</Link> | <Link to='/contact'>Contact</Link>
             </Links>
 
             <Routes>
-                <Route path="/api" element={<API />} />
-                <Route path="/search" element={<Search />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/" element={<Home />} />
+                <Route path='/api' element={<API />} />
+                <Route path='/search' element={<Search />} />
+                <Route path='/contact' element={<Contact />} />
+                <Route path='/' element={<Home />} />
             </Routes>
         </Body>
     </>

@@ -1,7 +1,7 @@
-import React, {useState} from "react";
-import styled from "@emotion/styled";
+import React, {useState} from 'react';
+import styled from '@emotion/styled';
 
-import {Button, Form} from "react-bootstrap";
+import {Button, Form} from 'react-bootstrap';
 
 const Fields = styled.div`
     display: flex;
@@ -39,44 +39,44 @@ const SearchTerms = ({onChange, loading}: Props): JSX.Element => {
         <>
             <Fields>
                 <LargeGroup>
-                    <Form.Group controlId="artistGroup">
+                    <Form.Group controlId='artistGroup'>
                         <Form.Label>Artist</Form.Label>
                         <Form.Control
-                            type="text"
-                            placeholder="Artist"
+                            type='text'
+                            placeholder='Artist'
                             value={artist}
                             onChange={(e) => setArtist(e.target.value)}
                         />
                     </Form.Group>
                 </LargeGroup>
                 <LargeGroup>
-                    <Form.Group controlId="titleGroup">
+                    <Form.Group controlId='titleGroup'>
                         <Form.Label>Title</Form.Label>
                         <Form.Control
-                            type="text"
-                            placeholder="Title"
+                            type='text'
+                            placeholder='Title'
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
                         />
                     </Form.Group>
                 </LargeGroup>
                 <SmallGroup>
-                    <Form.Group controlId="genreGroup">
+                    <Form.Group controlId='genreGroup'>
                         <Form.Label>Genre</Form.Label>
                         <Form.Control
-                            type="text"
-                            placeholder="Genre"
+                            type='text'
+                            placeholder='Genre'
                             value={genre}
                             onChange={(e) => setGenre(e.target.value)}
                         />
                     </Form.Group>
                 </SmallGroup>
                 <SmallGroup>
-                    <Form.Group controlId="yearGroup">
+                    <Form.Group controlId='yearGroup'>
                         <Form.Label>Year</Form.Label>
                         <Form.Control
-                            type="number"
-                            placeholder="Year"
+                            type='number'
+                            placeholder='Year'
                             min={1900}
                             value={year}
                             onChange={(e) => setYear(parseInt(e.target.value))}
@@ -85,7 +85,7 @@ const SearchTerms = ({onChange, loading}: Props): JSX.Element => {
                 </SmallGroup>
                 <ButtonGroup>
                     <Button
-                        variant="primary"
+                        variant='primary'
                         onClick={() =>
                             onChange({
                                 artist,
@@ -96,7 +96,7 @@ const SearchTerms = ({onChange, loading}: Props): JSX.Element => {
                         }
                         disabled={loading}
                     >
-                        {loading ? "Loading..." : "Search"}
+                        {loading ? 'Loading...' : 'Search'}
                     </Button>
                 </ButtonGroup>
             </Fields>

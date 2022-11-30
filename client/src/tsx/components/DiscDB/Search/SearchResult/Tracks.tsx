@@ -1,13 +1,13 @@
 /** @jsx jsx */
 
-import React from "react";
-import {jsx, css} from "@emotion/react";
+import React from 'react';
+import {jsx, css} from '@emotion/react';
 
-import {Table} from "react-bootstrap";
+import {Table} from 'react-bootstrap';
 
-import Disc from "src/tsx/Disc";
+import Disc from 'src/tsx/Disc';
 
-import {secondsToTimeString, trackLength} from "src/tsx/utils/timeUtils";
+import {secondsToTimeString, trackLength} from 'src/tsx/utils/timeUtils';
 
 const firstCell = css`
     width: 16px;

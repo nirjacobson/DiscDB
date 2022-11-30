@@ -1,12 +1,12 @@
-import React, {useState} from "react";
-import styled from "@emotion/styled";
+import React, {useState} from 'react';
+import styled from '@emotion/styled';
 
-import Disc from "src/tsx/Disc";
-import SearchTerms from "./SearchTerms";
-import Pages from "./Pages";
-import SearchResult from "./SearchResult";
+import Disc from 'src/tsx/Disc';
+import SearchTerms from './SearchTerms';
+import Pages from './Pages';
+import SearchResult from './SearchResult';
 
-import api from "src/tsx/api";
+import api from 'src/tsx/api';
 
 const Page = styled.div``;
 

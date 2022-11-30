@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "@emotion/styled";
+import React from 'react';
+import styled from '@emotion/styled';
 
 const Page = styled.div``;
 
@@ -37,13 +37,13 @@ Track {
 }`}
         </pre>
         <Endpoint>
-            <Title>GET /api/v1.0/{"{id}"}</Title>
+            <Title>GET /api/v1.0/{'{id}'}</Title>
             <Description>Get a disc by its DiscDB ID.</Description>
         </Endpoint>
         <Endpoint>
             <Title>
-                GET /api/v1.0/find?artist={"{a}"}&title={"{t}"}&genre={"{g}"}&year=
-                {"{y}"}&page={"{p}"}
+                GET /api/v1.0/find?artist={'{a}'}&title={'{t}'}&genre={'{g}'}&year=
+                {'{y}'}&page={'{p}'}
             </Title>
             <Description>
                 Find discs by any combination of artist, title, genre and year. Case-insensitive

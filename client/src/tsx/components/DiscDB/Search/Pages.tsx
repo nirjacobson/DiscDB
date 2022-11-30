@@ -1,9 +1,9 @@
 /** @jsx jsx */
 
-import React from "react";
-import {jsx, css} from "@emotion/react";
+import React from 'react';
+import {jsx, css} from '@emotion/react';
 
-import {Button, ButtonGroup, ButtonToolbar} from "react-bootstrap";
+import {Button, ButtonGroup, ButtonToolbar} from 'react-bootstrap';
 
 const toolbar = css`
     padding-bottom: 8px;
@@ -25,9 +25,9 @@ const Pages = ({page, pages, onChange}: Props): JSX.Element => {
 
     return (
         <ButtonToolbar css={toolbar}>
-            <ButtonGroup className="mr-2">
+            <ButtonGroup className='mr-2'>
                 {showLeftArrow && (
-                    <Button key="back" variant="default" onClick={() => onChange(left - 1)}>
+                    <Button key='back' variant='default' onClick={() => onChange(left - 1)}>
                         &lt;
                     </Button>
                 )}
@@ -36,14 +36,14 @@ const Pages = ({page, pages, onChange}: Props): JSX.Element => {
                     .map((pageNum) => (
                         <Button
                             key={pageNum}
-                            variant={pageNum === page ? "primary" : "default"}
+                            variant={pageNum === page ? 'primary' : 'default'}
                             onClick={() => onChange(pageNum)}
                         >
                             {pageNum}
                         </Button>
                     ))}
                 {showRightArrow && (
-                    <Button key="next" variant="default" onClick={() => onChange(right + 1)}>
+                    <Button key='next' variant='default' onClick={() => onChange(right + 1)}>
                         &gt;
                     </Button>
                 )}
@@ -51,8 +51,8 @@ const Pages = ({page, pages, onChange}: Props): JSX.Element => {
             {end && (
                 <span>
                     ...
-                    <ButtonGroup className="mr-2">
-                        <Button key="back" variant="default" onClick={() => onChange(pages)}>
+                    <ButtonGroup className='mr-2'>
+                        <Button key='back' variant='default' onClick={() => onChange(pages)}>
                             {end}
                         </Button>
                     </ButtonGroup>
