@@ -1,4 +1,5 @@
 module.exports = {
     moduleDirectories: ["node_modules", __dirname],
-    testEnvironment: "jsdom"
+    testEnvironment: "jsdom",
+    testMatch: ["**/?(*.)+(test).ts?(x)"]
 };
