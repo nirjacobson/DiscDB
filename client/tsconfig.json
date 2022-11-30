@@ -26,6 +26,7 @@
   },
   "include": [
     "./src",
-    "./webpack.config.ts"
+    "./webpack.config.ts",
+    "./jest.config.ts"
   ]
 }
