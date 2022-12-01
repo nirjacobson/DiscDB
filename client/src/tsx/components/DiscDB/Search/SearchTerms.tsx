@@ -40,7 +40,6 @@ const SearchTerms = ({onChange, loading}: Props): JSX.Element => {
             <Fields>
                 <LargeGroup>
                     <Form.Group controlId='artistGroup'>
-                        <Form.Label>Artist</Form.Label>
                         <Form.Control
                             type='text'
                             placeholder='Artist'
@@ -51,7 +50,6 @@ const SearchTerms = ({onChange, loading}: Props): JSX.Element => {
                 </LargeGroup>
                 <LargeGroup>
                     <Form.Group controlId='titleGroup'>
-                        <Form.Label>Title</Form.Label>
                         <Form.Control
                             type='text'
                             placeholder='Title'
@@ -62,7 +60,6 @@ const SearchTerms = ({onChange, loading}: Props): JSX.Element => {
                 </LargeGroup>
                 <SmallGroup>
                     <Form.Group controlId='genreGroup'>
-                        <Form.Label>Genre</Form.Label>
                         <Form.Control
                             type='text'
                             placeholder='Genre'
@@ -73,7 +70,6 @@ const SearchTerms = ({onChange, loading}: Props): JSX.Element => {
                 </SmallGroup>
                 <SmallGroup>
                     <Form.Group controlId='yearGroup'>
-                        <Form.Label>Year</Form.Label>
                         <Form.Control
                             type='number'
                             placeholder='Year'

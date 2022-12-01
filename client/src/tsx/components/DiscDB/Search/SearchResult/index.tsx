@@ -104,8 +104,10 @@ const SearchResult = ({result: disc}: Props): JSX.Element => {
             <Accordion>
                 <Accordion.Item eventKey='0'>
                     <Accordion.Header>
-                        <Title>{disc.title}</Title>
-                        <Artist>{disc.artist}</Artist>
+                        <div>
+                            <Title>{disc.title}</Title>
+                            <Artist>{disc.artist}</Artist>
+                        </div>
                     </Accordion.Header>
                     <Accordion.Body>
                         <Button variant='link' onClick={() => setDisplayJson(!displayJson)}>
