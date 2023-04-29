@@ -148,7 +148,7 @@ public abstract class BaseTDao<T> {
   }
 
   private static void flatten(
-      final BasicDBObject pDBObject, final String prefix, BasicDBObject result) {
+      final BasicDBObject pDBObject, final String prefix, final BasicDBObject result) {
     for (final Iterator<String> it = pDBObject.keySet().iterator(); it.hasNext(); ) {
       final String key = it.next();
       final String nextPrefix = (prefix.isEmpty() ? prefix : (prefix + ".")) + key;
@@ -164,7 +164,7 @@ public abstract class BaseTDao<T> {
   }
 
   private static void flatten(
-      final BasicDBList pDBList, final String prefix, BasicDBObject result) {
+      final BasicDBList pDBList, final String prefix, final BasicDBObject result) {
     IntStream.range(0, pDBList.size())
         .forEach(
             idx -> {
