@@ -1,9 +1,9 @@
 package com.nirjacobson.discdb.svc.exception;
 
 public interface ErrorCode {
-    String name();
+  String name();
 
-    String getMessage();
+  String getMessage();
 
-    String formatMessage(final Object... pParams);
+  String formatMessage(final Object... pParams);
 }
