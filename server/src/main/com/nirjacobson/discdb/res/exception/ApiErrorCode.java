@@ -1,9 +1,14 @@
 package com.nirjacobson.discdb.res.exception;
 
-import com.nirjacobson.discdb.svc.exception.ErrorCode;
 import jakarta.servlet.http.HttpServletResponse;
 
-public interface ApiErrorCode extends ErrorCode {
+public interface ApiErrorCode {
+  String name();
+
+  String getMessage();
+
+  String formatMessage(final Object... pParams);
+
   int getStatus();
 
   default String getReason() {
