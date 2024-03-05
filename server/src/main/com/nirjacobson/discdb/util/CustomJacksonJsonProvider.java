@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.type.TypeFactory;
 import jakarta.ws.rs.Consumes;
@@ -124,7 +125,7 @@ public class CustomJacksonJsonProvider
 
   public static ObjectMapper createObjectMapper() {
 
-    return new ObjectMapper()
+    return JsonMapper.builder()
         .disable(
             MapperFeature.AUTO_DETECT_GETTERS,
             MapperFeature.AUTO_DETECT_IS_GETTERS,
@@ -137,6 +138,7 @@ public class CustomJacksonJsonProvider
         .enable(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY)
         // Ensure maps are sorted as well - MapperFeature sorting does not apply to non-SortedMap
         .enable(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS)
+        .build()
         .registerModule(createSerializationModule());
   }
 

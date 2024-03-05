@@ -10,8 +10,6 @@
         <module name="DiscDB" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="DiscDB" target="1.8" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="20" />
   </component>
 </project>

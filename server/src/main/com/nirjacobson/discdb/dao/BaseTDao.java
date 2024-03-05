@@ -37,6 +37,7 @@ public abstract class BaseTDao<T> {
   private final String _collectionName;
   private final Class<T> _encoderClass;
 
+  @SuppressWarnings("unchecked")
   protected BaseTDao(final String pDbName, final String pCollectionName) {
     _dbName = pDbName;
     _collectionName = pCollectionName;
@@ -73,7 +74,7 @@ public abstract class BaseTDao<T> {
     @SuppressWarnings("rawtypes")
     final ClassModel<Optional> optionalClassModel = ClassModel.builder(Optional.class).build();
     return fromRegistries(
-        com.mongodb.MongoClient.getDefaultCodecRegistry(),
+        com.mongodb.MongoClientSettings.getDefaultCodecRegistry(),
         // PojoCodecProvider should be the last register in the list
         fromProviders(
             PojoCodecProvider.builder()
