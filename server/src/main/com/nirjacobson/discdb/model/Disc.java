@@ -4,6 +4,8 @@ import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import com.nirjacobson.discdb.util.BasicDBListCollector;
+
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -244,7 +246,7 @@ public class Disc {
 
     public Builder playOrder(final List<Integer> pPlayOrder) {
       _dbObject.append(
-          FieldDefs.PLAY_ORDER, pPlayOrder.stream().collect(new BasicDBListCollector<>()));
+          FieldDefs.PLAY_ORDER, (pPlayOrder == null) ? null : pPlayOrder.stream().collect(new BasicDBListCollector<>()));
       return this;
     }
 
