@@ -1,7 +1,7 @@
 import React from 'react';
 import {render, screen, within} from '@testing-library/react';
 
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 // components
 import SearchResult from 'src/tsx/components/DiscDB/Search/SearchResult';
@@ -9,7 +9,6 @@ import SearchResult from 'src/tsx/components/DiscDB/Search/SearchResult';
 import {secondsToTimeString} from 'src/tsx/utils/timeUtils';
 // fixtures
 import fixtures from 'src/test/fixtures';
-
 
 describe('src/tsx/components/DiscDB/Search/SearchResult', function () {
     describe('when rendered', function () {

@@ -1,7 +1,7 @@
 import React from 'react';
 import {fireEvent, render, screen, within} from '@testing-library/react';
 
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 // components
 import Tracks from 'src/tsx/components/DiscDB/Search/SearchResult/Tracks';

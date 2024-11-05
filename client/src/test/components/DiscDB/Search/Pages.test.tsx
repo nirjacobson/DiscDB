@@ -1,7 +1,7 @@
 import React from 'react';
 import {fireEvent, render, screen} from '@testing-library/react';
 
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 
 // components
 import Pages from 'src/tsx/components/DiscDB/Search/Pages';
@@ -19,7 +19,7 @@ describe('src/tsx/components/DiscDB/Search/Pages', function () {
             const buttons = screen.queryAllByRole('button');
             expect(buttons.length).toBe(this.pages);
             for (let i = 0; i < this.pages; i++) {
-                expect(buttons[i]).toHaveTextContent(i + 1 + '');
+                expect(buttons[i].textContent).toBe(i + 1 + '');
                 expect(buttons[i]).toHaveClass(i + 1 === this.page ? 'btn-primary' : 'btn-default');
             }
         });
@@ -46,19 +46,19 @@ describe('src/tsx/components/DiscDB/Search/Pages', function () {
         it('shows buttons for the first 10 pages', function () {
             const buttons = screen.queryAllByRole('button');
             for (let i = 0; i < 10; i++) {
-                expect(buttons[i]).toHaveTextContent(i + 1 + '');
+                expect(buttons[i].textContent).toBe(i + 1 + '');
                 expect(buttons[i]).toHaveClass(i + 1 === this.page ? 'btn-primary' : 'btn-default');
             }
         });
 
         it('shows a button for the next set of pages', function () {
-            expect(screen.getAllByRole('button')[10]).toHaveTextContent('>');
+            expect(screen.getAllByRole('button')[10].textContent).toBe('>');
             expect(screen.getAllByRole('button')[10]).toHaveClass('btn-default');
         });
 
         it('shows a button for the last page', function () {
             const lastButton = screen.getAllByRole('button').reduce((acc, curr) => curr);
-            expect(lastButton).toHaveTextContent(this.pages + '');
+            expect(lastButton.textContent).toBe(this.pages + '');
             expect(lastButton).toHaveClass('btn-default');
         });
 
@@ -103,13 +103,13 @@ describe('src/tsx/components/DiscDB/Search/Pages', function () {
         });
 
         it('shows a button for the previous set of pages', function () {
-            expect(screen.getAllByRole('button')[0]).toHaveTextContent('<');
+            expect(screen.getAllByRole('button')[0].textContent).toBe('<');
             expect(screen.getAllByRole('button')[0]).toHaveClass('btn-default');
         });
 
         it('shows a button for pages 11 on', function () {
             for (let i = 1; i < this.pages - 10 + 1; i++) {
-                expect(screen.getAllByRole('button')[i]).toHaveTextContent(i + 10 + '');
+                expect(screen.getAllByRole('button')[i].textContent).toBe(i + 10 + '');
                 expect(screen.getAllByRole('button')[i]).toHaveClass(
                     i === this.page - 10 ? 'btn-primary' : 'btn-default'
                 );
@@ -146,13 +146,13 @@ describe('src/tsx/components/DiscDB/Search/Pages', function () {
         });
 
         it('shows a button for the previous set of pages', function () {
-            expect(screen.getAllByRole('button')[0]).toHaveTextContent('<');
+            expect(screen.getAllByRole('button')[0].textContent).toBe('<');
             expect(screen.getAllByRole('button')[0]).toHaveClass('btn-default');
         });
 
         it('shows a button for pages 21 to 30', function () {
             for (let i = 1; i < 10 + 1; i++) {
-                expect(screen.getAllByRole('button')[i]).toHaveTextContent(i + 20 + '');
+                expect(screen.getAllByRole('button')[i].textContent).toBe(i + 20 + '');
                 expect(screen.getAllByRole('button')[i]).toHaveClass(
                     i === this.page - 20 ? 'btn-primary' : 'btn-default'
                 );
@@ -160,13 +160,13 @@ describe('src/tsx/components/DiscDB/Search/Pages', function () {
         });
 
         it('shows a button for the next set of pages', function () {
-            expect(screen.getAllByRole('button')[11]).toHaveTextContent('>');
+            expect(screen.getAllByRole('button')[11].textContent).toBe('>');
             expect(screen.getAllByRole('button')[11]).toHaveClass('btn-default');
         });
 
         it('shows a button for the last page', function () {
             const lastButton = screen.getAllByRole('button').reduce((acc, curr) => curr);
-            expect(lastButton).toHaveTextContent(this.pages + '');
+            expect(lastButton.textContent).toBe(this.pages + '');
             expect(lastButton).toHaveClass('btn-default');
         });
 
